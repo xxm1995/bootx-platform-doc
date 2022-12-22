@@ -6,14 +6,14 @@ module.exports = {
   base: '/',
   title: 'Bootx Platform',
   lang: 'zh-CN',
-  description: '一个开源的后端管理脚手架',
+  description: '一个开源多功能的后端管理脚手架',
   head: createHead(),
   themeConfig: {
     repo: 'bootx/bootx-platform',
-    docsRepo: 'vbenjs/vue-vben-admin-doc',
+    docsRepo: 'bootx/bootx-platform-doc',
     logo: '/logo.png',
-    docsBranch: 'main',
-    editLinks: true,
+    docsBranch: 'master',
+    editLinks: false,
     editLinkText: '为此页提供修改建议',
     nav: createNav(),
     sidebar: createSidebar(),
@@ -26,12 +26,12 @@ module.exports = {
 
 function createHead() {
   return [
-    ['meta', { name: 'author', content: 'Vbenjs Team' }],
+    ['meta', { name: 'author', content: 'Bootx Team' }],
     [
       'meta',
       {
         name: 'keywords',
-        content: 'vben, vitejs, vite, ant-design-vue, vue',
+        content: 'Bootx, SpringBoot, Vite, ant-design-vue, vue',
       },
     ],
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' }],
@@ -43,7 +43,7 @@ function createHead() {
           'width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no',
       },
     ],
-    ['meta', { name: 'keywords', content: 'vue vben admin docs' }],
+    ['meta', { name: 'keywords', content: 'bootx platform docs' }],
     ['link', { rel: 'icon', href: '/favicon.ico' }],
   ];
 }
@@ -54,395 +54,83 @@ function createHead() {
 function createNav() {
   return [
     {
-      text: '指南',
-      link: '/guide/',
+      text: '文档指南',
+      link: '/guide/项目介绍',
+    },
+    {
+      text: '源码地址',
       items: [
         {
-          text: '指南',
-          link: '/guide/introduction',
+          text: 'Github',
+          link: 'https://github.com/xxm1995/bootx-platform',
         },
         {
-          text: '深入',
-          link: '/dep/icon',
-        },
-        {
-          text: '其他',
-          link: '/other/faq',
+          text: 'Gitee',
+          link: 'https://gitee.com/bootx/bootx-platform',
         },
       ],
     },
     {
-      text: '组件',
-      link: '/components/',
+      text: '交流群',
       items: [
         {
-          text: '介绍',
-          link: '/components/introduction',
-        },
-        {
-          text: '全局组件',
-          link: '/components/glob/button',
-        },
-        {
-          text: '常用组件',
-          link: '/components/basic',
-        },
-        {
-          text: '函数式组件',
-          link: '/components/functional/context-menu',
+          text: 'QQ群：939414255',
+          link: 'https://qm.qq.com/cgi-bin/qm/qr?k=hPIJw0BLRMONMZCYLUtB5wWHqumhOpCw&authKey=m3YVb3vcRR0MtBlXLEMfTAhxBlOlLtobsF8Otipp6N0DqdUn55q0G/e7HhnvtsY2&noverify=0',
         },
       ],
     },
     {
-      text: '相关链接',
-      items: [
-        {
-          text: '完整版预览',
-          link: 'https://vben.vvbin.cn',
-        },
-        {
-          text: '完整版源码',
-          link: 'https://github.com/vbenjs/vue-vben-admin',
-        },
-        // {
-        //   text: '精简版预览',
-        //   link: 'https://vvbin.cn/thin/next',
-        // },
-        {
-          text: '精简版分支',
-          link: 'https://github.com/vbenjs/vue-vben-admin/tree/thin',
-        },
-        {
-          text: '文档源码',
-          link: 'https://github.com/vbenjs/vue-vben-admin-doc',
-        },
-        {
-          text: '更新日志',
-          link: 'https://github.com/vbenjs/vue-vben-admin/blob/main/CHANGELOG.md',
-        },
-      ],
+      text: 'Vue2预览',
+      link: 'http://web.platform.bootx.cn/',
     },
     {
-      text: '社区',
-      items: [
-        {
-          text: 'KOOK(新)',
-          link: 'https://kaihei.co/6ZPFKi',
-        },
-        {
-          text: 'QQ群：569291866',
-          link: 'https://qm.qq.com/cgi-bin/qm/qr?k=VI7WhOn0VeeWnX58eODxzF_X3digtJRL&jump_from=webapi',
-        },
-        {
-          text: 'Discord Chat',
-          link: 'https://discord.gg/VU62jTecad',
-        },
-        {
-          text: '赞助',
-          link: '/other/donate',
-        },
-      ],
+      text: 'Vue3预览',
+      link: 'http://v3.platform.bootx.cn/',
     },
-    {
-      text: 'vben3',
-      items: [
-        {
-          text: '仓库（alpha）',
-          link: 'https://github.com/jinmao88/vben3',
-        },
-        {
-          text: '文档',
-          link: 'https://vbenjs.github.io/vben3-doc/',
-        },
-        ],
-     }
   ];
 }
 
 function createSidebar() {
   return {
-    '/components/': [
+    '/guide': [
       {
-        text: '组件',
+        text: "基础说明",
         children: [
           {
-            text: '前言',
-            link: '/components/introduction',
+            text: '项目介绍',
+            link: '/guide/项目介绍',
           },
-        ],
+          {
+            text: '开发环境',
+            link: '/guide/开发环境',
+          }
+        ]
       },
       {
-        text: '全局组件',
+        text: '项目配置',
         children: [
           {
-            text: 'Button',
-            link: '/components/glob/button',
-          },
-        ],
-      },
-      {
-        text: '常用组件',
-        children: [
-          {
-            text: 'Basic',
-            link: '/components/basic',
+            text: '开发环境',
+            link: '/guide/config/开发环境',
           },
           {
-            text: 'Page',
-            link: '/components/page',
-          },
-          {
-            text: 'Icon',
-            link: '/components/icon',
-          },
-          {
-            text: 'Authority',
-            link: '/components/auth',
-          },
-          {
-            text: 'Form',
-            link: '/components/form',
-          },
-          {
-            text: 'Table',
-            link: '/components/table',
-          },
-          {
-            text: 'PopConfirmButton',
-            link: '/components/pop-confirm-button',
-          },
-          {
-            text: 'CollapseContainer',
-            link: '/components/collapse-container',
-          },
-          {
-            text: 'ScrollContainer',
-            link: '/components/scroll-container',
-          },
-          {
-            text: 'LazyContainer',
-            link: '/components/lazy-container',
-          },
-          {
-            text: 'CodeEditor',
-            link: '/components/code-editor',
-          },
-          {
-            text: 'JsonPreview',
-            link: '/components/json-preview',
-          },
-          {
-            text: 'CountDown',
-            link: '/components/count-down',
-          },
 
-          {
-            text: 'ClickOutSide',
-            link: '/components/click-out-side',
-          },
-          {
-            text: 'CountTo',
-            link: '/components/count-to',
-          },
-          {
-            text: 'Cropper',
-            link: '/components/cropper',
-          },
-          {
-            text: 'Description',
-            link: '/components/desc',
-          },
-          {
-            text: 'Drawer',
-            link: '/components/drawer',
-          },
-          {
-            text: 'Modal',
-            link: '/components/modal',
-          },
-          {
-            text: 'FlowChart',
-            link: '/components/flow-chart',
-          },
-          {
-            text: 'Upload',
-            link: '/components/upload',
-          },
-          {
-            text: 'Tree',
-            link: '/components/tree',
-          },
-          {
-            text: 'Excel',
-            link: '/components/excel',
-          },
-          {
-            text: 'Qrcode',
-            link: '/components/qrcode',
-          },
-          {
-            text: 'Markdown',
-            link: '/components/markdown',
-          },
-          {
-            text: 'Loading',
-            link: '/components/loading',
-          },
-          {
-            text: 'Tinymce',
-            link: '/components/tinymce',
-          },
-          {
-            text: 'Time',
-            link: '/components/time',
-          },
-          {
-            text: 'StrengthMeter',
-            link: '/components/strength-meter',
-          },
-          {
-            text: 'Verify',
-            link: '/components/verify',
-          },
-          {
-            text: 'Transition',
-            link: '/components/transition',
-          },
-          {
-            text: 'VirtualScroll',
-            link: '/components/virtual-scroll',
-          },
-        ],
+          }
+        ]
       },
       {
-        text: '函数式组件',
-        children: [
-          {
-            text: 'ContextMenu',
-            link: '/components/functional/context-menu',
-          },
-          {
-            text: 'Loading',
-            link: '/components/functional/loading',
-          },
-          {
-            text: 'Preview',
-            link: '/components/functional/preview',
-          },
-        ],
+        text: '功能模块说明',
+        children: []
       },
+      {
+        text: '前端使用',
+        children: []
+      },
+      {
+        text: 'FAQ',
+        children: []
+      },
+
     ],
-    '/': [
-      {
-        text: '指南',
-        children: [
-          {
-            text: '介绍',
-            link: '/guide/introduction',
-          },
-          {
-            text: '开始',
-            link: '/guide/',
-          },
-          {
-            text: '项目配置',
-            link: '/guide/settings',
-          },
-          {
-            text: '路由',
-            link: '/guide/router',
-          },
-          {
-            text: '菜单',
-            link: '/guide/menu',
-          },
-          {
-            text: '权限',
-            link: '/guide/auth',
-          },
-          {
-            text: 'Mock&联调',
-            link: '/guide/mock',
-          },
-          {
-            text: '组件注册',
-            link: '/guide/component',
-          },
-          {
-            text: '样式',
-            link: '/guide/design',
-          },
-          {
-            text: '外部模块',
-            link: '/guide/lib',
-          },
-          {
-            text: '构建&部署',
-            link: '/guide/deploy',
-          },
-          {
-            text: 'Electron',
-            link: '/guide/electron',
-          },
-        ],
-      },
-      {
-        text: '深入',
-        children: [
-          {
-            text: '跨域处理',
-            link: '/dep/cors',
-          },
-          {
-            text: '图标',
-            link: '/dep/icon',
-          },
-          {
-            text: '国际化',
-            link: '/dep/i18n',
-          },
-          {
-            text: '项目规范',
-            link: '/dep/lint',
-          },
-          {
-            text: '黑暗主题',
-            link: '/dep/dark',
-          },
-        ],
-      },
-      {
-        text: '其他',
-        children: [
-          {
-            text: '常见问题',
-            link: '/other/faq',
-          },
-          {
-            text: '常见疑点',
-            link: '/other/doubt',
-          },
-          {
-            text: '测试服务',
-            link: '/other/server',
-          },
-          {
-            text: '相关项目',
-            link: '/other/project',
-          },
-        ],
-      },
-    ],
-  };
+  }
 }
-
-// /**
-//  * @type {(namespace:string,items:string[])=>string[]}
-//  */
-// function urlWrapper(namespace, items) {
-//   return items.map((item) => namespace + item);
-// }
-
-// function getGuildNav() {
-//   return urlWrapper('/guide', ['/']);
-// }

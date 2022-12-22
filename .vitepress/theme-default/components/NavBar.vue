@@ -14,16 +14,6 @@
       <div class="item">
         <dark-mode-switch />
       </div>
-      <div v-if="repo" class="item">
-        <a
-          class="nav-btn"
-          href="https://github.com/vbenjs/vue-vben-admin"
-          target="_blank"
-          aria-label="View GitHub Repo"
-        >
-          <ri-github-line />
-        </a>
-      </div>
     </div>
     <slot name="search" />
   </header>
@@ -35,11 +25,9 @@
   import NavLinks from './NavLinks.vue';
   import ToggleSideBarButton from './ToggleSideBarButton.vue';
   import DarkModeSwitch from './DarkModeSwitch.vue';
-  import { useRepo } from '../composables/repo';
 
   defineEmits(['toggle']);
 
-  const repo = useRepo();
 </script>
 
 <style scoped>

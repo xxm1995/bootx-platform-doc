@@ -1,10 +1,10 @@
 {
-  "name": "vben-admin-docs",
+  "name": "bootx-platform-docs",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/vbenjs/vue-vben-admin-doc",
-  "author": "Vben <anncwb@126.com>",
-  "license": "MIT",
+  "repository": "https://gitee.com/bootx/bootx-platform-doc",
+  "author": "bootx",
+  "license": "Apache 2.0",
   "scripts": {
     "dev": "vitepress dev",
     "build": "vitepress build",
