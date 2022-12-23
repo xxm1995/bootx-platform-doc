@@ -19,7 +19,7 @@ module.exports = {
     nav: createNav(),
     // 侧边导航
     sidebar: createSidebar(),
-  },
+  }
 };
 
 /**
@@ -150,8 +150,16 @@ function createSidebar() {
             link: '/doc/overview/guide/项目介绍',
           },
           {
-            text: '开发环境',
-            link: '/doc/overview/guide/开发环境',
+            text: '项目依赖',
+            link: '/doc/overview/guide/项目依赖',
+          },
+          {
+            text: '系统模块',
+            link: '/doc/overview/guide/系统模块',
+          },
+          {
+            text: '内置功能',
+            link: '/doc/overview/guide/功能说明',
           }
         ]
       },
@@ -159,20 +167,23 @@ function createSidebar() {
         text: '项目配置和运行',
         children: [
           {
-            text: 'Docker安装',
-            link: '/doc/overview/config/Docker安装',
-          },
-          {
-            text: '相关docker-compose',
-            link: '/doc/overview/config/相关docker-compose',
-          },
-          {
             text: '项目启动',
             link: '/doc/overview/config/项目启动',
+          },{
+            text: '功能裁剪',
+            link: '/doc/overview/config/功能裁剪',
           },
           {
             text: '日志收集',
             link: '/doc/overview/config/日志收集',
+          },
+          {
+            text: '安装Docker',
+            link: '/doc/overview/config/安装Docker',
+          },
+          {
+            text: '相关docker-compose',
+            link: '/doc/overview/config/相关docker-compose',
           },
         ]
       },
@@ -329,7 +340,7 @@ function createSidebar() {
     ],
     '/doc/front/vue2/': [
       {
-        text: '前端使用说明(Vue2)',
+        text: '前端使用说明',
         children: [
           {
             text: '通用Mixin',
@@ -355,6 +366,13 @@ function createSidebar() {
             text: '字典翻译组件',
             link: '/doc/front/vue2/字典翻译组件',
           },
+        ],
+        text: '自定义组件',
+        children: [
+          {
+            text: '字典翻译组件',
+            link: '/doc/front/vue2/字典翻译组件',
+          }
         ]
       }
     ],
