@@ -159,7 +159,7 @@ function createSidebar() {
           },
           {
             text: '内置功能',
-            link: '/doc/overview/guide/功能说明',
+            link: '/doc/overview/guide/内置功能',
           }
         ]
       },
