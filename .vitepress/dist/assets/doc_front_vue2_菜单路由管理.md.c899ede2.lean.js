@@ -1,0 +1,1 @@
+import{_ as t,f as e,e as a}from"./plugin-vue_export-helper.c921523c.js";const i='{"title":"","description":"","frontmatter":{},"relativePath":"doc/front/vue2/\u83DC\u5355\u8DEF\u7531\u7BA1\u7406.md","lastUpdated":1671722324590}',r={};function o(_,c,n,s,p,d){return a(),e("div")}var l=t(r,[["render",o]]);export{i as __pageData,l as default};

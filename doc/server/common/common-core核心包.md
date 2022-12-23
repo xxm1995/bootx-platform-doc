@@ -54,8 +54,8 @@
 - `RegexUtil` 正则验证工具类
 - `ResultConvertUtil` 结果转换工具类工具类，主要用于`Dto`转换
 - `StreamUtil` 流工具类，包含复制流到字符串方法
-- `ValidationUtil`  属性校验工具类 
-   - `ValidationGroup`   属性校验分组，提供默认四种分组，分别是增删改查
+- `ValidationUtil` 属性校验工具类 
+   - `ValidationGroup` 属性校验分组，提供默认四种分组，分别是增删改查
 ## 包含依赖
 
 - `lombok`
