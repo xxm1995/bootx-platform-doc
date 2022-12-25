@@ -1,7 +1,6 @@
 ## MySQL
 
 ## Redis
-### Redis 6.x
 ```yaml
 version: '3'
 services:

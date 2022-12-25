@@ -1,4 +1,5 @@
 // @ts-check
+// import urlEncode from "markdown-it-disable-url-encode"
 /**
  * @type {import('vitepress').UserConfig}
  */
@@ -19,6 +20,8 @@ module.exports = {
     nav: createNav(),
     // 侧边导航
     sidebar: createSidebar(),
+  },
+  markdown:{
   }
 };
 
@@ -154,12 +157,29 @@ function createSidebar() {
             link: '/doc/overview/guide/项目依赖',
           },
           {
-            text: '系统模块',
-            link: '/doc/overview/guide/系统模块',
-          },
-          {
             text: '内置功能',
             link: '/doc/overview/guide/内置功能',
+          },
+          {
+            text: '系统模块',
+            children: [
+              {
+                text: 'Core核心功能包',
+                link: '/doc/overview/guide/Core核心功能包',
+              },
+              {
+                text: '工具配置封装',
+                link: '/doc/overview/guide/工具配置封装',
+              },
+              {
+                text: '通用功能组件',
+                link: '/doc/overview/guide/通用功能组件',
+              },
+              {
+                text: '业务模块',
+                link: '/doc/overview/guide/业务模块',
+              },
+            ]
           }
         ]
       },
