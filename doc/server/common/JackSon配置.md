@@ -1,18 +1,20 @@
-### 功能
+## 功能
 
-- 提供`JacksonUtil`工具类，用于需要进行`Jackson`解析的场合
+- 提供`JacksonUtil`工具类，用于需要进行`Jackson`解析的场合，支持泛型对象的反序列
 - 提供 `java8` 时间序列化类，在`Jackson`序列化时对`JDK8`新增的时间类进行支持
 - 提供`Long` 类型序列化为`String`类型的序列化类，处理前端长整形精度丢失问题
 - 提供一个默认的`ObjectMapper`序列化配置，支持`jdk8`，`LongToString`等配置
 - 提供 `typeObjectMapper` 序列化配置，记录序列化对象的类型信息
 - 提供`Jackson2ObjectMapper`相关配置（`Spring MVC`进行参数和结果转换），支持`jdk8`，`LongToString`等配置
-## 注意事项
+## 使用说明
+::: warning
 系统中`ObjectMapper`序列化配置主要分为两类，同时`yml`中对`JackSon`进行的配置会失效，需要进行注意
+:::
 
-| Bean名称 | 说明 |
-| --- | --- |
-| objectMapper | 默认jsckson序列化配置 |
-| typeObjectMapper | 带序列化对象的类型信息配置，主要用在Redis相关地方 |
+| Bean名称           | 说明                           |
+|------------------|------------------------------|
+| objectMapper     | 默认jsckson序列化配置               |
+| typeObjectMapper | 带序列化对象的类型信息配置，主要用在Redis、缓存场合 |
 
 默认的是不记录对象类型的信息
 ```json
@@ -38,7 +40,7 @@
     }
 ]
 ```
-另一种会记录被序列化对象的类型信息，这种序列化后的json在反序列化的时候，可以直接反序列回原始的对象，通常`redis`相关的序列化方式都是基于这种进行微调，样例如下
+另一种会记录被序列化对象的类型信息，这种序列化后的json在反序列化的时候，可以直接反序列回原始的对象，`redis`、`缓存模块`默认的序列化方式就是基于这种进行微调，样例如下
 ```json
 [
   "cn.dev33.satoken.session.SaSession",

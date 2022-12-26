@@ -189,7 +189,12 @@ function createSidebar() {
           {
             text: '项目启动',
             link: '/doc/overview/config/项目启动',
-          },{
+          },
+          {
+            text: '项目部署',
+            link: '/doc/overview/config/项目部署',
+          },
+          {
             text: '功能裁剪',
             link: '/doc/overview/config/功能裁剪',
           },
@@ -295,6 +300,15 @@ function createSidebar() {
           },
         ]
       },
+      {
+        text: '其他组件',
+        children: [
+          {
+            text: '字段翻译',
+            link: '/doc/server/common/字段翻译',
+          },
+        ]
+      }
     ],
     '/doc/server/starter/': [
       {

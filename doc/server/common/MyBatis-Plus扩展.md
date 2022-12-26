@@ -1,7 +1,5 @@
-## MyBatis-Plus 扩展
-
-### 功能
-
+_# MyBatis-Plus 扩展
+## 功能
 - 提供`MpBaseEntity`和`MpIdEntity`对象，作为通用数据库实体类的公共父类
 - 提供`BaseManager`，作为 `ServiceImpl` 的增强替代
 - 提供`MpUtils`工具类，包含获取分页方法和分页对象转换方法
@@ -9,8 +7,8 @@
 - 结合 `BigField`注解，提供大字段便捷方式排除
 - 配置默认ID生成策略为雪花ID方式
 - 优化MP插件加载机制
-### 使用说明
-**注册插件**
+## 使用说明
+### 注册插件
 用`MpInterceptor`对象将编写的Mp插件进行包装，可以指定不同插件的先后顺序，然后注册到Spring Bean容器中即可，参照如下数据权限的插件注册代码
 ```java
 @Configuration
@@ -35,65 +33,62 @@ public class DatePermConfiguration {
     }
 }
 ```
-#### 普通CURD
-
-1.  创建数据库类，继承`MpBaseEntity`公共父类  
-```java
-@EqualsAndHashCode(callSuper = true)
-@Data
-@TableName("iam_client")
-@Accessors(chain = true)
-public class Client extends MpBaseEntity implements EntityBaseFunction<ClientDto> {
-     /** 编码 */
-    private String code;
-
-    /** 名称 */
-    private String name;
-}
-```
-
-2.  创建Mapper和Manager对象，`BaseManager`是替代`ServiceImpl`的实现，引入Manage对象在是为了不在Service中直接进行数据库相关操作，把数据库操作下沉到Manager层(通常放在dao层中，不单独实现)    
-```java
-@Mapper
-public interface ClientMapper extends BaseMapper<Client> {
-}
-```
-```java
-@Repository
-@RequiredArgsConstructor
-public class ClientManager extends BaseManager<ClientMapper, Client> {
-}
-```
+## 普通CURD配置
+1. 创建数据库类，继承`MpBaseEntity`公共父类  
+    ```java
+    @EqualsAndHashCode(callSuper = true)
+    @Data
+    @TableName("iam_client")
+    @Accessors(chain = true)
+    public class Client extends MpBaseEntity implements EntityBaseFunction<ClientDto> {
+         /** 编码 */
+        private String code;
+    
+        /** 名称 */
+        private String name;
+    }
+    ```
+2. 创建Mapper和Manager对象，`BaseManager`是替代`ServiceImpl`的实现，引入Manage对象在是为了不在Service中直接进行数据库相关操作，把数据库操作下沉到Manager层(通常放在dao层中，不单独实现)    
+    ```java
+    @Mapper
+    public interface ClientMapper extends BaseMapper<Client> {
+    }
+    ```
+    ```java
+    @Repository
+    @RequiredArgsConstructor
+    public class ClientManager extends BaseManager<ClientMapper, Client> {
+    }
+    ```
 > 在一次性项目中，为了开发简便，可以直接Service直接继承`BaseManager`，或者直接继承`ServiceImpl`都可以，不用太恪守开发规范。
 
 
-#### 大字段排除
-	一般在分页或者列表查询时，是不需要查询出记录的大字段，为此提供便捷工具类，提供大字段注解`BigField` 和对应工具类，用于批量查询时排除大字段。
+## 大字段排除
+> 一般在分页或者列表查询时，是不需要查询出记录的大字段，为此提供便捷工具类，提供大字段注解`BigField` 和对应处理方法，用于批量查询时排除大字段。
 
-1.  在数据库类中的大字段加上`BigField`注解  
-```java
-public class Client extends MpBaseEntity implements EntityBaseFunction<ClientDto> {
-     /** 编码 */
-    private String code;
+1. 在数据库类中的大字段加上`BigField`注解  
+    ```java
+    public class Client extends MpBaseEntity implements EntityBaseFunction<ClientDto> {
+        /** 编码 */
+        private String code;
+    
+        /** 名称 */
+        @BigField
+        private String name;
+    }
+    ```
+2. 演示`MpBigFieldHandler`快捷工具类的使用说明，需要配合`Query.select`方法进行使用，字段存在长文本注解则在查询时被排除  
+    ```java
+    public List<AlipayConfig> findAll() {
+        return lambdaQuery()
+                // MpBigFieldHandler::excludeBigField 过滤大字段
+                .select(AlipayConfig.class, MpBigFieldHandler::excludeBigField)
+                .list();
+    }
+    ```
 
-    /** 名称 */
-    @BigField
-    private String name;
-}
-```
-
-2.  演示`MpBigFieldHandler`快捷工具类的使用说明，需要配合`Query.select`方法进行使用，字段存在长文本注解则在查询时被排除  
-```java
-public List<AlipayConfig> findAll() {
-    return lambdaQuery()
-            // MpBigFieldHandler::excludeBigField 过滤大字段
-            .select(AlipayConfig.class, MpBigFieldHandler::excludeBigField)
-            .list();
-}
-```
-
-### BaseManager 自定义CRUD 接口
-#### Save
+## BaseManager 自定义CRUD 接口
+### Save
 
 ```java
 // 插入一条记录
@@ -105,7 +100,7 @@ boolean saveBatch(Collection<T> entityList, int batchSize);
 // 存在更新记录，否插入一条记录
 T saveOrUpdate(T entity)
 ```
-#### Update
+### Update
 
 ```java
 // 根据 ID 选择修改
@@ -117,7 +112,7 @@ boolean updateAllById(Collection<T> entityList);
 // 根据ID 批量更新
 boolean updateBatchById(Collection<T> entityList, int batchSize);
 ```
-#### Delete
+### Delete
 
 ```java
 // 根据主键进行删除
@@ -127,7 +122,7 @@ boolean deleteByIds(Collection<? extends Serializable> idList);
 // 根据指定字段值进行删除
 boolean deleteByField(SFunction<T, ?> field, Object fieldValue)
 ```
-#### Find
+### Find
 
 ```java
 // 根据主键查询
@@ -141,7 +136,7 @@ List<T> findAllByField(SFunction<T, ?> field, Object fieldValue);
 // 根据字段集合查询列表
 List<T> findAllByFields(SFunction<T, ?> field, Collection<? extends Serializable> fieldValues);
 ```
-#### Page
+### Page
 
 ```java
 // 无条件分页查询
@@ -149,13 +144,13 @@ List<T> findAllByFields(SFunction<T, ?> field, Collection<? extends Serializable
 // 条件分页查询
 <E extends IPage<T>> E page(E page, Wrapper<T> queryWrapper);
 ```
-#### Count
+### Count
 
 ```java
 // 根据指定字段查询存在的数据数量
 Integer countByField(SFunction<T, ?> field, Object fieldValue);
 ```
-#### Existed
+### Existed
 
 ```java
 // 判断指定id对象是否存在
@@ -165,28 +160,35 @@ boolean existedByField(SFunction<T, ?> field, Object fieldValue);
 // 根据指定字段查询是否存在数据 不包括传入指定ID的对象
 boolean existedByField(SFunction<T, ?> field, Object fieldValue,Serializable id);
 ```
-#### Chain
+### Chain
 
 同Mybatis-Plus的`ServiceImpl`
 
-### MpUtil 工具类
+## MpUtil 工具类
 
 ```java
 // mp page转换为 PageResult 同时进行dto转换
-static <T> PageResult<T> convert2PageResult(Page<? extends EntityBaseFunction<T>> page);
+<T> PageResult<T> convert2PageResult(Page<? extends EntityBaseFunction<T>> page);
 // page转换为 PageResult
-static <T> PageResult<T> page2PageResult(Page<T> page);
+<T> PageResult<T> page2PageResult(Page<T> page);
 // 获取分页对象 MyBatis-Plus
-static <T> Page<T> getMpPage(PageParam page, Class<T> clazz);
+<T> Page<T> getMpPage(PageParam page, Class<T> clazz);
 // 获取行名称
-static String getColumnName(SFunction<?,?> function);
+String getColumnName(SFunction<?,?> function);
+// 批量执行语句, 通常用于for循环方式的批量插入
+executeBatch(List<T> saveList, Consumer<List<T>> consumer,int batchSize);
+// 初始化数据库Entity, 通常配合 executeBatch 使用
+<T extends MpIdEntity> void initEntityList(List<? extends MpIdEntity> entityList,Long userId)
+// 字段是否存在长文本注解
+boolean excludeBigField(TableFieldInfo tableFieldInfo)
+// 获取一条数据, 有多条取第一条
+<T> Optional<T> findOne(LambdaQueryChainWrapper<T> lambdaQuery)
 ```
 
-### 扩展模块
-#### 类型处理器
-`JacksonRawTypeHandler`  通过Jackson 实现 JSON 字段类型处理器，相较于官方`JacksonTypeHandler`会记录对象属性类型, 通常用于被容器(List、Set、Map)包装的属性上，将泛型类型进行记录
+## 扩展类型处理器
+`JacksonRawTypeHandler`  通过`Jackson`实现 JSON 字段类型处理器，相较于官方`JacksonTypeHandler`会记录对象属性类型, 通常用于被容器(List、Set、Map)包装的属性上，将泛型类型进行记录
 ```java
    /** 分配的原始数据 */
     @TableField(typeHandler = JacksonRawTypeHandler.class)
     private Object assignRaw;
-```
+```_
