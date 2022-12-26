@@ -4,14 +4,13 @@
 
 <script setup lang="ts">
 import '@docsearch/css'
-import { useRoute, useRouter } from 'vitepress'
+import {useData, useRoute, useRouter} from 'vitepress'
 import { defineProps, getCurrentInstance, onMounted, watch } from 'vue'
 import docsearch from '@docsearch/js'
 import type { DefaultTheme } from '../config'
 import type { DocSearchHit } from '@docsearch/react/dist/esm/types'
-import { useSiteDataByRoute } from 'vitepress'
 
-const siteData = useSiteDataByRoute()
+const {site} = useData()
 
 const props = defineProps<{
   options: DefaultTheme.AlgoliaSearchOptions
@@ -61,7 +60,7 @@ function initialize(userOptions: any) {
   // if the user has multiple locales, the search results should be filtered
   // based on the language
   const facetFilters = props.multilang
-    ? ['language:' + siteData.value.lang]
+    ? ['language:' + site.value.lang]
     : []
 
   docsearch(

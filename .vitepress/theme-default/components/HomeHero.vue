@@ -2,9 +2,9 @@
   <header v-if="showHero" class="home-hero">
     <figure v-if="$frontmatter.heroImage" class="figure">
       <img
-        class="image"
-        :src="$withBase($frontmatter.heroImage)"
-        :alt="$frontmatter.heroAlt"
+          class="image"
+          :src="withBase($frontmatter.heroImage)"
+          :alt="$frontmatter.heroAlt"
       />
     </figure>
 
@@ -12,45 +12,44 @@
     <p v-if="hasTagline" class="description">{{ tagline }}</p>
 
     <NavLink
-      v-if="hasAction"
-      :item="{ link: data.actionLink, text: data.actionText }"
-      class="action"
+        v-if="hasAction"
+        :item="{ link: frontmatter.actionLink, text: frontmatter.actionText }"
+        class="action"
     />
 
     <NavLink
-      v-if="hasAltAction"
-      :item="{ link: data.altActionLink, text: data.altActionText }"
-      class="action alt"
+        v-if="hasAltAction"
+        :item="{ link: frontmatter.altActionLink, text: frontmatter.altActionText }"
+        class="action alt"
     />
   </header>
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useSiteDataByRoute, useFrontmatter } from 'vitepress'
+import {withBase, useData} from 'vitepress'
 import NavLink from './NavLink.vue'
 
-const site = useSiteDataByRoute()
-const data = useFrontmatter()
+const {site,frontmatter} = useData()
 
 const showHero = computed(() => {
   return (
-    data.value.heroImage ||
-    hasHeroText.value ||
-    hasTagline.value ||
-    hasAction.value
+      frontmatter.value.heroImage ||
+      hasHeroText.value ||
+      hasTagline.value ||
+      hasAction.value
   )
 })
 
-const hasHeroText = computed(() => data.value.heroText !== null)
-const heroText = computed(() => data.value.heroText || site.value.title)
+const hasHeroText = computed(() => frontmatter.value.heroText !== null)
+const heroText = computed(() => frontmatter.value.heroText || site.value.title)
 
-const hasTagline = computed(() => data.value.tagline !== null)
-const tagline = computed(() => data.value.tagline || site.value.description)
+const hasTagline = computed(() => frontmatter.value.tagline !== null)
+const tagline = computed(() => frontmatter.value.tagline || site.value.description)
 
-const hasAction = computed(() => data.value.actionLink && data.value.actionText)
+const hasAction = computed(() => frontmatter.value.actionLink && frontmatter.value.actionText)
 const hasAltAction = computed(
-  () => data.value.altActionLink && data.value.altActionText
+    () => frontmatter.value.altActionLink && frontmatter.value.altActionText
 )
 </script>
 

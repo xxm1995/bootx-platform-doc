@@ -7,10 +7,9 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
-import { useSiteDataByRoute, usePageData } from 'vitepress'
+import {useData} from "vitepress";
 
-const site = useSiteDataByRoute()
-const page = usePageData()
+const {site,page} = useData()
 
 const hasLastUpdated = computed(() => {
   const lu = site.value.themeConfig.lastUpdated

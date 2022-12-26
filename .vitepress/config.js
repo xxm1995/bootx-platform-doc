@@ -387,6 +387,8 @@ function createSidebar() {
             link: '/doc/front/vue2/字典翻译组件',
           },
         ],
+      },
+      {
         text: '自定义组件',
         children: [
           {

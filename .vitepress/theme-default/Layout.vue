@@ -73,12 +73,7 @@
 
 <script setup lang="ts">
 import { ref, computed, watch, defineAsyncComponent } from 'vue'
-import {
-  useRoute,
-  useSiteData,
-  usePageData,
-  useSiteDataByRoute
-} from 'vitepress'
+import {useRoute, useData} from 'vitepress'
 import { isSideBarEmpty, getSideBarConfig } from './support/sideBar'
 import type { DefaultTheme } from './config'
 
@@ -103,10 +98,8 @@ const AlgoliaSearchBox = __ALGOLIA__
 
 // generic state
 const route = useRoute()
-const siteData = useSiteData<DefaultTheme.Config>()
-const siteRouteData = useSiteDataByRoute()
-const theme = computed(() => siteData.value.themeConfig)
-const page = usePageData()
+const {site,page,theme} = useData()
+
 
 // custom layout
 const isCustomLayout = computed(() => !!route.data.frontmatter.customLayout)
@@ -115,13 +108,13 @@ const enableHome = computed(() => !!route.data.frontmatter.home)
 
 // navbar
 const showNavbar = computed(() => {
-  const { themeConfig } = siteRouteData.value
+  const { themeConfig } = site.value
   const { frontmatter } = route.data
   if (frontmatter.navbar === false || themeConfig.navbar === false) {
     return false
   }
   return (
-    siteData.value.title ||
+    site.value.title ||
     themeConfig.logo ||
     themeConfig.repo ||
     themeConfig.nav
@@ -138,7 +131,7 @@ const showSidebar = computed(() => {
     return false
   }
 
-  const { themeConfig } = siteRouteData.value
+  const { themeConfig } = site.value
 
   return !isSideBarEmpty(
     getSideBarConfig(themeConfig.sidebar, route.data.relativePath)
