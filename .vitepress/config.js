@@ -235,6 +235,10 @@ function createSidebar() {
             link: '/doc/server/common/缓存模块',
           },
           {
+            text: '数据翻译',
+            link: '/doc/server/common/数据翻译',
+          },
+          {
             text: '异常处理器',
             link: '/doc/server/common/异常处理器',
           },
@@ -263,16 +267,16 @@ function createSidebar() {
             link: '/doc/server/common/MyBatis-Plus扩展',
           },
           {
+            text: 'RabbitMQ配置',
+            link: '/doc/server/common/RabbitMQ配置',
+          },
+          {
             text: 'Redis增强配置',
             link: '/doc/server/common/Redis增强配置',
           },
           {
             text: 'Sequence序列生成器',
             link: '/doc/server/common/Sequence序列生成器',
-          },
-          {
-            text: 'RabbitMQ配置',
-            link: '/doc/server/common/RabbitMQ配置',
           },
           {
             text: 'MQTT消息队列封装',

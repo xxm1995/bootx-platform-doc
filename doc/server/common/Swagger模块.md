@@ -6,17 +6,18 @@
 
 ### 使用
 #### Swagger3注解使用
-| swagger2 | Swagger3 | 说明 |
-| --- | --- | --- |
-| @Api  | @Tag(name 
- = “接口类描述”)  | Controller 类上 |
-| @ApiOperation  | @Operation(summary 
- =“接口方法描述”)  | Controller 方法上 |
-| @ApiImplicitParams  | @Parameters  | Controller方法上 |
-| @ApiImplicitParam  | @Parameter(description=“参数描述”) | Controller 方法上 |
-| @ApiParam  | @Parameter(description=“参数描述”) | Controller 方法参数上 |
-| @ApiIgnore  | @Parameter(hidden 
- = true) 或 @Operation(hidden 
+| swagger2           | Swagger3                       | 说明               |
+|--------------------|--------------------------------|------------------|
+| @Api               | @Tag(name                      |                  |
+| = “接口类描述”)         | Controller 类上                  |                  |
+| @ApiOperation      | @Operation(summary             |                  |
+| =“接口方法描述”)         | Controller 方法上                 |                  |
+| @ApiImplicitParams | @Parameters                    | Controller方法上    |
+| @ApiImplicitParam  | @Parameter(description=“参数描述”) | Controller 方法上   |
+| @ApiParam          | @Parameter(description=“参数描述”) | Controller 方法参数上 |
+| @ApiIgnore         | @Parameter(hidden              |                  |
+
+= true) 或 @Operation(hidden 
  = true) 或 @Hidden  | - |
 | @ApiModel  | @Schema(title 
  = "实体类标题")  | 对象上 |

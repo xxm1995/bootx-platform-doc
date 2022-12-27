@@ -7,8 +7,7 @@ _# MyBatis-Plus 扩展
 - 结合 `BigField`注解，提供大字段便捷方式排除
 - 配置默认ID生成策略为雪花ID方式
 - 优化MP插件加载机制
-## 使用说明
-### 注册插件
+## 注册插件
 用`MpInterceptor`对象将编写的Mp插件进行包装，可以指定不同插件的先后顺序，然后注册到Spring Bean容器中即可，参照如下数据权限的插件注册代码
 ```java
 @Configuration
