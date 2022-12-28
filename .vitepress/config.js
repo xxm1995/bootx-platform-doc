@@ -304,15 +304,6 @@ function createSidebar() {
           },
         ]
       },
-      {
-        text: '其他组件',
-        children: [
-          {
-            text: '字段翻译',
-            link: '/doc/server/common/字段翻译',
-          },
-        ]
-      }
     ],
     '/doc/server/starter/': [
       {

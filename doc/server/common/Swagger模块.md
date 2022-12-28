@@ -1,32 +1,25 @@
-## Swagger 模块
-### 说明
-	对Swagger3进行封装，方便配置，通过Spring的动态注册Bean和数据绑定功能，在容器Bean初始化之前把`GroupedOpenApi`（相当于Swagger2的`Docket`）注入到Spring容器中
+# Swagger 模块
+## 说明
+对Swagger3进行封装，方便配置，
+::: warning
+注意：所使用的的是Swagger3(SpringDoc)，不支持Swagger2相关的注解，因为Swagger2(SpringFox)已经在17年停止维护了，最新的Spirng Boot版本与Swagger2已经有不兼容的问题，
+所以为了后期更少出现问题，建议直接使用Swagger3(SpringDoc)
+:::
+## Swagger3注解对照表
+| swagger2           | Swagger3                                                        | 说明                                                                  |
+|--------------------|-----------------------------------------------------------------|---------------------------------------------------------------------|
+| @Api               | @Tag(name= “接口类描述”)                                             | Controller 类上                                                       |
+| @ApiOperation      | @Operation(summary =“接口方法描述”)                                   | Controller 方法上                                                      |     
+| @ApiImplicitParams | @Parameters                                                     | Controller方法上                                                       |
+| @ApiImplicitParam  | @Parameter(description=“参数描述”)                                  | Controller 方法上                                                      |
+| @ApiParam          | @Parameter(description=“参数描述”)                                  | Controller 方法参数上                                                    |
+| @ApiIgnore         | @Parameter(hidden = true) 或 @Operation(hidden = true) 或 @Hidden | 参数上                                                                 |
+| @ApiModel          | @Schema(title  = "实体类标题")                                       | 对象上                                                                 |
+| @ApiModelProperty  | @Schema(description= "字段描述")                                    | 对象属性上                                                               |
+| -                  | @ParameterObject                                                | Controller 方法参数上，使用@ParameterObject 注解修饰的请求参数对象，会将对象的每个字段添加为单独的请求参数 |
 
-> 注意：所使用的的是Swagger3(SpringDoc)，不支持Swagger2相关的注解，因为Swagger2(SpringFox)已经在17年停止维护了，最新的Spirng Boot版本与Swagger2已经有不兼容的问题，所以为了后期更少出现问题，直接使用Swagger3
-
-### 使用
-#### Swagger3注解使用
-| swagger2           | Swagger3                       | 说明               |
-|--------------------|--------------------------------|------------------|
-| @Api               | @Tag(name                      |                  |
-| = “接口类描述”)         | Controller 类上                  |                  |
-| @ApiOperation      | @Operation(summary             |                  |
-| =“接口方法描述”)         | Controller 方法上                 |                  |
-| @ApiImplicitParams | @Parameters                    | Controller方法上    |
-| @ApiImplicitParam  | @Parameter(description=“参数描述”) | Controller 方法上   |
-| @ApiParam          | @Parameter(description=“参数描述”) | Controller 方法参数上 |
-| @ApiIgnore         | @Parameter(hidden              |                  |
-
-= true) 或 @Operation(hidden 
- = true) 或 @Hidden  | - |
-| @ApiModel  | @Schema(title 
- = "实体类标题")  | 对象上 |
-| @ApiModelProperty  | @Schema(description= "字段描述") | 对象属性上 |
-| - | @ParameterObject  | Controller 方法参数上，使用@ParameterObject 
- 注解修饰的请求参数对象，会将对象的每个字段添加为单独的请求参数  |
-
-#### 使用演示
-
+## 使用演示
+### Controller
 ```java
 @Tag(name ="系统参数")
 @RestController
@@ -50,7 +43,7 @@ public class SystemParamController {
     }
 }
 ```
-
+### 实体类
 ```java
 @EqualsAndHashCode(callSuper = true)
 @Data
@@ -65,19 +58,23 @@ public class SystemParameterDto extends BaseDto {
     private String paramKey;
 }
 ```
-#### 配置文件
+## 自定义配置
+:::tip
+对多文档分组进行增强，支持一个分组文档扫描多个包，原理是通过Spring的动态注册Bean和数据绑定功能，在容器Bean初始化之前把`GroupedOpenApi`（相当于Swagger2的`Docket`）注入到Spring容器中来实现。数据权限.
+:::
 
 ```yaml
 # 项目配置
 bootx:
   common:
     swagger:
+      # 是否启用，生产环境推荐关闭
       enabled: true
       author: xxm
-      version: 1.1.0-alpha-3
+      version: 1.x.x
       title: bootx开发平台单体版
       description: bootx-platform开发平台单体版
-      # 多模块扫码
+      # 多模块扫包
       base-packages:
         "[基础API]": cn.bootx.baseapi
         "[身份识别和管理]": cn.bootx.iam

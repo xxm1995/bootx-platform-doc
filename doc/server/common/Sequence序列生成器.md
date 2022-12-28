@@ -60,7 +60,7 @@ public Sequence mySeq(){
     return SequenceUtil.create(1,100,0);
 }
 ```
-### 创建对象
+### 创建对象直接使用
 ```java
 public void test(){
     Sequence sequence = SequenceUtil.create(1, 100, 0);
