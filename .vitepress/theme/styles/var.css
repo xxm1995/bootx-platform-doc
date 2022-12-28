@@ -53,3 +53,11 @@ html:not(.light) .DocSearch {
   --docsearch-logo-color: var(--c-white-dark);
   --docsearch-muted-color: var(--c-text-dark-1);
 }
+/* 滚动条样式优化 */
+html ::-webkit-scrollbar {
+    width: 10px;
+    background-color: #F5F5F5;
+}
+html ::-webkit-scrollbar-thumb {
+    background-color: #dcdfe6;
+}
