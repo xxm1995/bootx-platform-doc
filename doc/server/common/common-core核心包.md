@@ -8,14 +8,14 @@
 - `CountTime` 获取方法执行的时间
 - `Dict` 字典翻译注解
 - `DictTranslation` 字典翻译标识注解
-- `EncryptionField` 数据库加密字段注解，详细使用见[数据权限模块](../starter/数据权限.md)
+- `EncryptionField` 数据库加密字段注解，详细使用见[数据权限模块](/doc/server/starter/数据权限.md)
 - `Idempotent` 幂等性拦截注解，用于拦截前端重复提交的请求，详细见[幂等处理器模块](幂等处理器.md)
-- `IgnoreAuth` 忽略鉴权注解，可以加在`Controller`的方法或类上，访问时不在进行鉴权，加在非`Controller`的地方无效，详细使用见[登录鉴权模块](../starter/登录鉴权.md)
-- `JobLog` 定时任务日志记录注解，控制是该定时方法是否需要记录日志，详细使用见[Quartz定时任务模块](../starter/Quartz定时任务.md)
+- `IgnoreAuth` 忽略鉴权注解，可以加在`Controller`的方法或类上，访问时不在进行鉴权，加在非`Controller`的地方无效，详细使用见[登录鉴权模块](/doc/server/starter/登录鉴权.md)
+- `JobLog` 定时任务日志记录注解，控制是该定时方法是否需要记录日志，详细使用见[Quartz定时任务模块](/doc/server/starter/Quartz定时任务.md)
 - `NestedPermission` 嵌套权限控制注解，需要配合Permission注解一起使用，主要用来解决在`@Permission`声明的方法调用其他子方法时，
-忽略子方法执行时的数据权限拦截，详细使用见[数据权限模块](../starter/数据权限.md)
-- `Permission` 权限控制注解，可以添加到方法和类上，添加后所执行的SQL会进行数据权限相关的控制，详细使用见[数据权限模块](../starter/数据权限.md)
-- `OperateLog` 操作日志记录注解，`AOP`处理类自动拦截，记录对应的操作行为，可以进行重复的标注，详细使用见[审计日志模块](../starter/审计日志.md)
+忽略子方法执行时的数据权限拦截，详细使用见[数据权限模块](/doc/server/starter/数据权限.md)
+- `Permission` 权限控制注解，可以添加到方法和类上，添加后所执行的SQL会进行数据权限相关的控制，详细使用见[数据权限模块](/doc/server/starter/数据权限.md)
+- `OperateLog` 操作日志记录注解，`AOP`处理类自动拦截，记录对应的操作行为，可以进行重复的标注，详细使用见[审计日志模块](/doc/server/starter/审计日志.md)
 - `QueryParam` 查询参数构造注解，通过标注在实体类，可以让实体类转换成`MyBatis-Plus`的`QueryWrapper`查询构造器，详细使用见[超级查询器模块](超级查询器.md)
 ## 常量枚举类
 
