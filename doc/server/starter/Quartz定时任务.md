@@ -1,5 +1,8 @@
+# 定时任务
+
 ## 功能
 - 封装Quartz定时任务，可以通过web界面来控制执行
+- 通过标注注解来进行自动记录执行日志
 ## 使用
 自定义`Job`任务类，然后在Web管理页面上添加该任务并启动。
 > `Job`任务类可以正常注入Spring Bean对象，Quartz具体使用查看官方教程
@@ -56,3 +59,12 @@ quartz:
           threadPriority: 5
           threadsInheritContextClassLoaderOfInitializingThread: true
 ```
+## 记录日志
+在定时任务的执行类上标注`JobLog`注解，就可以开启自动保存执行日志的功能，其中有两个参数：
+> `log` 是否记录正常日志，默认为true
+> `errorLog` 是否记录异常日志，默认为true
+
+## 相关类
+- `QuartzJobScheduler` 定时任务调度器
+- `JobLogAspectHandler` 定时任务日志切面
+
