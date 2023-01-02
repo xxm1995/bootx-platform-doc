@@ -47,10 +47,10 @@ function createUrl(
 ): string {
   return bitbucketRE.test(repo)
     ? createBitbucketUrl(repo, docsRepo, docsDir, docsBranch, path)
-    : createGitHubUrl(repo, docsRepo, docsDir, docsBranch, path)
+    : createGiteeUrl(repo, docsRepo, docsDir, docsBranch, path)
 }
 
-function createGitHubUrl(
+function createGiteeUrl(
   repo: string,
   docsRepo: string,
   docsDir: string,
@@ -59,7 +59,7 @@ function createGitHubUrl(
 ): string {
   const base = isExternal(docsRepo)
     ? docsRepo
-    : `https://github.com/${docsRepo}`
+    : `https://gitee.com/${docsRepo}`
 
   return (
     base.replace(endingSlashRE, '') +

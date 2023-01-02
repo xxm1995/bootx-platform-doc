@@ -11,10 +11,10 @@ module.exports = {
   head: createHead(),
   themeConfig: {
     repo: 'bootx/bootx-platform',
-    docsRepo: 'bootx/bootx-platform-doc',
+    docsRepo: 'bootx/bootx',
     logo: '/logo.png',
     docsBranch: 'master',
-    editLinks: false,
+    editLinks: true,
     editLinkText: '为此页提供修改建议',
     // 顶部导航
     nav: createNav(),

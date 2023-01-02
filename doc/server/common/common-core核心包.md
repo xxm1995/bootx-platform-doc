@@ -6,6 +6,7 @@
 
 - `BigField` 数据库大字段标识注解，详细使用见[MyBatis-Plus扩展模块](MyBatis-Plus扩展.md)
 - `CountTime` 获取方法执行的时间
+- `DataVersionLog` 数据版本日志注解，添加到要记录版本数据的数据库实体类上，详细使用见[审计日志模块](/doc/server/starter/审计日志.md)
 - `Dict` 字典翻译注解
 - `DictTranslation` 字典翻译标识注解
 - `EncryptionField` 数据库加密字段注解，详细使用见[数据权限模块](/doc/server/starter/数据权限.md)

@@ -61,8 +61,8 @@ quartz:
 ```
 ## 记录日志
 在定时任务的执行类上标注`JobLog`注解，就可以开启自动保存执行日志的功能，其中有两个参数：
-> `log` 是否记录正常日志，默认为true
-> `errorLog` 是否记录异常日志，默认为true
+- `log` 是否记录正常日志，默认为`true`
+- `errorLog` 是否记录异常日志，默认为`true`
 
 ## 相关类
 - `QuartzJobScheduler` 定时任务调度器
