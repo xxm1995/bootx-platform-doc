@@ -101,7 +101,7 @@ function createNav() {
         },
         {
           text: "Vue3",
-          link: "/front/vue3",
+          link: "/doc/front/vue3/字典组件",
         },
         {
           text: "移动端",
@@ -407,7 +407,17 @@ function createSidebar() {
         ]
       }
     ],
-    '/doc/front/vue3/': [],
+    '/doc/front/vue3/': [
+      {
+        text: '自定义组件',
+        children: [
+          {
+            text: '字典翻译组件',
+            link: '/doc/front/vue3/字典组件',
+          }
+        ]
+      }
+    ],
     '/doc/front/mobile/ ': [],
   }
 }

@@ -2,7 +2,6 @@
 ## 说明
 通过引入`WebsocketMixin`可以方便的接入`websocket`，省去编写连接`websocket`时的一些重复的操作
 ## 使用
-
 1. 导入`WebsocketMixin`组件
 2. 在页面中创建一个初始化方法，设置`websocketUrl`连接地址，并初始化websocket连接
 ```javascript
@@ -17,7 +16,6 @@ initWs () {
   })
 }
 ```
-
 3. 可以调用或重写`WebsocketMixin`中的方法，常用的主要是`websocketSend`和`websocketOnmessage`两个，分别是发送和接收消息
 ```java
 // 发送消息
