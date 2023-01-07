@@ -397,23 +397,26 @@ function createSidebar() {
           },
         ],
       },
-      {
-        text: '自定义组件',
-        children: [
-          {
-            text: '字典翻译组件',
-            link: '/doc/front/vue2/字典翻译组件',
-          }
-        ]
-      }
     ],
     '/doc/front/vue3/': [
       {
         text: '自定义组件',
         children: [
           {
-            text: '字典翻译组件',
+            text: '字典组件 ',
             link: '/doc/front/vue3/字典组件',
+          },
+          {
+            text: '超级查询器',
+            link: '/doc/front/vue3/超级查询器',
+          },
+          {
+            text: '用户选择组件',
+            link: '/doc/front/vue3/用户选择组件',
+          },
+          {
+            text: '角色选择组件',
+            link: '/doc/front/vue3/角色选择组件',
           }
         ]
       }

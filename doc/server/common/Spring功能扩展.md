@@ -44,6 +44,11 @@ public class TestController {
 public void addRolePath(Long roleId, List<Long> permissionIds) {
 }
 ```
+
+### `CorsFilter`使用
+::: tip
+过滤器过滤器默认开启，可以通过配置文件进行关闭
+:::
 ## 参数配置
 ```yaml
 bootx:
