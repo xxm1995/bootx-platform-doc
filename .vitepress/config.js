@@ -70,6 +70,10 @@ function createNav() {
           link: "/doc/overview/config/项目启动",
         },
         {
+          text: '更新日志',
+          link: '/doc/changelog/更新日志',
+        },
+        {
           text: "FAQ",
           link: "/doc/overview/faq/常见问题",
         },
@@ -222,6 +226,10 @@ function createSidebar() {
         ]
       }
     ],
+    "/doc/changelog/":  [{
+      text: '更新日志',
+      link: '/doc/changelog/更新日志',
+    }],
     '/doc/server/common/': [
       {
         text: '工具或配置封装',
@@ -229,6 +237,10 @@ function createSidebar() {
           {
             text: 'Core核心模块',
             link: '/doc/server/common/common-core核心包' ,
+          },
+          {
+              text: '自动建表',
+              link: '/doc/server/common/自动建表' ,
           },
           {
             text: '缓存模块',
