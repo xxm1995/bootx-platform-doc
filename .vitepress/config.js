@@ -239,8 +239,8 @@ function createSidebar() {
             link: '/doc/server/common/common-core核心包' ,
           },
           {
-              text: '自动建表',
-              link: '/doc/server/common/自动建表' ,
+            text: '自动建表',
+            link: '/doc/server/common/自动建表' ,
           },
           {
             text: '缓存模块',
