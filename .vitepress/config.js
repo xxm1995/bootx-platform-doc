@@ -93,6 +93,10 @@ function createNav() {
         {
           text: "业务服务",
           link: "/doc/server/service/基础服务",
+        },
+        {
+          text: "其他功能",
+          link: "/doc/server/other/行政区划",
         }
       ]
     },
@@ -377,6 +381,12 @@ function createSidebar() {
             link: '/doc/server/service/支付服务',
           },
         ]
+      }
+    ],
+    '/doc/server/other/':[
+      {
+        text: '通用Mixin',
+        link: '/doc/server/other/行政区划',
       }
     ],
     '/doc/front/vue2/': [
