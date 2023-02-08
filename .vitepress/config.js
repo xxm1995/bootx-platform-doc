@@ -109,7 +109,7 @@ function createNav() {
         },
         {
           text: "Vue3",
-          link: "/doc/front/vue3/字典组件",
+          link: "/doc/front/vue3/路由配置",
         },
         {
           text: "移动端",
@@ -421,6 +421,19 @@ function createSidebar() {
       },
     ],
     '/doc/front/vue3/': [
+      {
+        text: '内置功能',
+        children: [
+          {
+            text: '路由配置 ',
+            link: '/doc/front/vue3/路由配置',
+          },
+          {
+            text: 'Websocket使用说明 ',
+            link: '/doc/front/vue3/Websocket使用说明',
+          },
+        ]
+      },
       {
         text: '自定义组件',
         children: [
