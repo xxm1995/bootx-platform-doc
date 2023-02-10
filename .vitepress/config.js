@@ -385,7 +385,7 @@ function createSidebar() {
     ],
     '/doc/server/other/':[
       {
-        text: '通用Mixin',
+        text: '行政区划',
         link: '/doc/server/other/行政区划',
       }
     ],
