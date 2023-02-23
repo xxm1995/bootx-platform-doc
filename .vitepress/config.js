@@ -140,12 +140,21 @@ function createNav() {
       ],
     },
     {
-      text: 'Vue2预览',
-      link: 'http://web.platform.bootx.cn/',
-    },
-    {
-      text: 'Vue3预览',
-      link: 'http://v3.platform.bootx.cn/',
+      text: '项目演示',
+      items: [
+        {
+          text: 'Vue2预览',
+          link: 'http://web.platform.bootx.cn/',
+        },
+        {
+          text: 'Vue3预览',
+          link: 'http://v3.platform.bootx.cn/',
+        },
+        {
+          text: '可视化大屏',
+          link: 'http://visualization.platform.bootx.cn/',
+        }
+      ],
     },
   ];
 }
