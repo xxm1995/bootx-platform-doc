@@ -447,10 +447,6 @@ function createSidebar() {
         text: '自定义组件',
         children: [
           {
-            text: '字典组件 ',
-            link: '/doc/front/vue3/字典组件',
-          },
-          {
             text: '超级查询器',
             link: '/doc/front/vue3/超级查询器',
           },
@@ -463,6 +459,10 @@ function createSidebar() {
             link: '/doc/front/vue3/角色选择组件',
           }
         ]
+      },
+      {
+        text: '自定义Hooks',
+        link: '/doc/front/vue3/自定义Hooks',
       }
     ],
     '/doc/front/mobile/ ': [],
