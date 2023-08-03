@@ -7,7 +7,7 @@
 - 前端封装用户全局消息通知的`Websocket`和 对应的事件总线，通过监听指定事件，可以实现将前台消息推送到不同的页面中
 ## 使用说明
 ::: tip
-对应前端使用方法见 [Websocket使用说明(Vue2)](/doc/front/vue2/Websocket使用说明.md)，[Websocket使用说明(Vue3)](/doc/front/vue2/Websocket使用说明.md)。
+对应前端使用方法见 [Websocket使用说明(Vue2)](/platform/frontfront/vue2/Websocket使用说明.md)，[Websocket使用说明(Vue3)](/platform/frontfront/vue2/Websocket使用说明.md)。
 
 在使用前，需要登录Web管理后台，在`系统配置`中`系统参数`里配置 `websocket服务器地址`。
 :::

@@ -2,7 +2,7 @@
 home: true
 heroImage: /spring-logo.png
 actionText: 快速开始 →
-actionLink: /doc/overview/guide/项目介绍
+actionLink: /platform/overview/guide/项目介绍
 
 
 features:
@@ -14,7 +14,7 @@ features:
     details:  支持Vue3、Vite、TypeScript等最新技术栈的同时，也兼容Vue2、Webpack历史主流技术
   - title: 📦 可视化大屏
     details: 基于GoVIew开发，只需要简单的拖拉转，就可以生成出可用的数据大屏看板。
-  - title: 🔩 支付收单
+  - title: 🔩 DaxPay
     details: 支持单通道支付、聚合支付、组合支付、部分和全部退款等支付功能，对支付宝、微信、云闪付、现金、钱包、储值卡等多种支付方式进行实现
   - title: 🔑 简单易用
     details: 遵循高内聚低耦合设计原则，功能模块保持职责单一，依赖清晰，对日常使用中常见功能进行实现，不做过度封和设计
