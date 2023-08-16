@@ -1,4 +1,4 @@
-_# MyBatis-Plus 扩展
+# MyBatis-Plus 扩展
 ## 功能
 - 提供`MpBaseEntity`和`MpIdEntity`对象，作为通用数据库实体类的公共父类
 - 提供`BaseManager`，作为 `ServiceImpl` 的增强替代
@@ -7,8 +7,24 @@ _# MyBatis-Plus 扩展
 - 结合 `BigField`注解，提供大字段便捷方式排除
 - 配置默认ID生成策略为雪花ID方式
 - 优化MP插件加载机制
+## 新增类型处理器
+> Mybatis和Mybatis Plus虽然已经自带了一些字段类型处理器，但针对项目中经常出现的`List<T>`类型，和一些泛型对象的字段，如果直接使用
+> 类型处理器，序列化时虽然不会出现问题，但反序列化时，泛型信息会丢失，导致出问题，所以针对这种问题，新增了一些支持序列化泛型信息的
+ 
+- IntegerListTypeHandler `List<Integer>` 的类型转换器类
+- JacksonRawTypeHandler Jackson 方式实现转换成 JSON 的类型处理器, 会记录对象属性类型, 通常用于储存不确定对象的属性上，例如: 泛型对象、集合对象、存储的数据是字段类型的子类等
+- LongListTypeHandler `List<Long>` 的类型转换器类
+- StringListTypeHandler `List<String>` 的类型转换器类
+
+## 数据库基础类
+- MpBaseEntity 
+- MpCreateEntity
+- MpDelEntity
+- MpIdEntity
+
+
 ## 注册插件
-用`MpInterceptor`对象将编写的Mp插件进行包装，可以指定不同插件的先后顺序，然后注册到Spring Bean容器中即可，参照如下数据权限的插件注册代码
+对原生的`Mybatis Plus`的插件注册进行增强，可以指定不同插件的先后顺序，用`MpInterceptor`对象将编写的Mp插件进行包装，然后注册到Spring Bean容器中即可，参照如下数据权限的插件注册代码
 ```java
 @Configuration
 @RequiredArgsConstructor
@@ -18,22 +34,47 @@ public class DatePermConfiguration {
      * 数据范围权限插件
      */
     @Bean
-    @ConditionalOnProperty(prefix = "bootx.starter.data-perm", value = "enableDataPerm", havingValue = "true",matchIfMissing = true)
     public MpInterceptor dataPermInterceptorMp(DataScopeInterceptor dataScopeInterceptor) {
-        return new MpInterceptor(dataScopeInterceptor);
+        // 加载优先级为 1
+        return new MpInterceptor(dataScopeInterceptor,1);
     }
     /**
      * 查询字段权限插件
      */
     @Bean
-    @ConditionalOnProperty(prefix = "bootx.starter.data-perm", value = "enableSelectFieldPerm", havingValue = "true",matchIfMissing = true)
     public MpInterceptor selectFieldPermInterceptorMp(SelectFieldPermInterceptor bootxDataPermissionHandler) {
-        return new MpInterceptor(bootxDataPermissionHandler);
+        // 加载优先级为 2
+        return new MpInterceptor(bootxDataPermissionHandler,2);
     }
 }
 ```
-## 普通CURD配置
-1. 创建数据库类，继承`MpBaseEntity`公共父类  
+
+## 大字段排除
+> 一般在分页或者列表查询时，是不需要查询出记录的大字段，为此提供便捷工具类，提供大字段注解`BigField` 和对应处理方法，用于批量查询时排除大字段。
+
+1. 在数据库类中的大字段加上`BigField`注解
+    ```java
+    public class Client extends MpBaseEntity implements EntityBaseFunction<ClientDto> {
+        /** 编码 */
+        private String code;
+    
+        /** 名称 */
+        @BigField
+        private String name;
+    }
+    ```
+2. 演示`MpBigFieldHandler`快捷工具类的使用说明，需要配合`Query.select`方法进行使用，字段存在长文本注解则在查询时被排除
+    ```java
+    public List<AlipayConfig> findAll() {
+        return lambdaQuery()
+                // MpBigFieldHandler::excludeBigField 过滤大字段
+                .select(AlipayConfig.class, MpBigFieldHandler::excludeBigField)
+                .list();
+    }
+    ```
+
+## 增强版CURD
+1. 创建数据库类，继承`MpBaseEntity`等相关公共父类（非必须项，不继承这个也没问题，体检继承）
     ```java
     @EqualsAndHashCode(callSuper = true)
     @Data
@@ -61,32 +102,6 @@ public class DatePermConfiguration {
     ```
 > 在一次性项目中，为了开发简便，可以直接Service直接继承`BaseManager`，或者直接继承`ServiceImpl`都可以，不用太恪守开发规范。
 
-
-## 大字段排除
-> 一般在分页或者列表查询时，是不需要查询出记录的大字段，为此提供便捷工具类，提供大字段注解`BigField` 和对应处理方法，用于批量查询时排除大字段。
-
-1. 在数据库类中的大字段加上`BigField`注解  
-    ```java
-    public class Client extends MpBaseEntity implements EntityBaseFunction<ClientDto> {
-        /** 编码 */
-        private String code;
-    
-        /** 名称 */
-        @BigField
-        private String name;
-    }
-    ```
-2. 演示`MpBigFieldHandler`快捷工具类的使用说明，需要配合`Query.select`方法进行使用，字段存在长文本注解则在查询时被排除  
-    ```java
-    public List<AlipayConfig> findAll() {
-        return lambdaQuery()
-                // MpBigFieldHandler::excludeBigField 过滤大字段
-                .select(AlipayConfig.class, MpBigFieldHandler::excludeBigField)
-                .list();
-    }
-    ```
-
-## BaseManager 自定义CRUD 接口
 ### Save
 
 ```java
@@ -190,4 +205,4 @@ boolean excludeBigField(TableFieldInfo tableFieldInfo)
    /** 分配的原始数据 */
     @TableField(typeHandler = JacksonRawTypeHandler.class)
     private Object assignRaw;
-```_
+```

@@ -3,6 +3,7 @@
 const {Platform} = require("./doc/platform");
 const {BpmPlus} = require("./doc/bpmplus");
 const {DaxPay} = require("./doc/daxpay");
+const {Safety} = require("./doc/safety");
 /**
  * @type {import('vitepress').UserConfig}
  */
@@ -87,6 +88,10 @@ function createNav() {
             text: "后端文档",
             items: [
                 {
+                    text: "安全体系",
+                    link: "/platform/safety/什么是安全",
+                },
+                {
                     text: "工具与配置",
                     link: "/platform/server/common/common-core核心包",
                 },
@@ -108,15 +113,28 @@ function createNav() {
             text: "前端文档",
             items: [
                 {
-                    text: "Vue2",
-                    link: "/platform/front/vue2/通用Mixin",
-                },
-                {
                     text: "Vue3",
                     link: "/platform/front/vue3/路由配置",
                 },
                 {
                     text: "移动端",
+                    link: "/front/mobile",
+                }
+            ]
+        },
+        {
+            text: "DaxPay",
+            items: [
+                {
+                    text: "快速指南",
+                    link: "/platform/front/vue2/通用Mixin",
+                },
+                {
+                    text: "业务服务",
+                    link: "/platform/front/vue3/路由配置",
+                },
+                {
+                    text: "二次开发",
                     link: "/front/mobile",
                 }
             ]
@@ -191,6 +209,8 @@ function createSidebar() {
         // 开源支付
         ...DaxPay,
         // 工作流
-        ...BpmPlus
+        ...BpmPlus,
+        // 安全相关
+        ...Safety,
     }
 }

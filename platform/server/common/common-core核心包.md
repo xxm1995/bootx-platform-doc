@@ -7,17 +7,16 @@
 - `BigField` 数据库大字段标识注解，详细使用见[MyBatis-Plus扩展模块](MyBatis-Plus扩展.md)
 - `CountTime` 获取方法执行的时间
 - `DataVersionLog` 数据版本日志注解，添加到要记录版本数据的数据库实体类上，详细使用见[审计日志模块](/platform/servererver/starter/审计日志.md)
-- `Dict` 字典翻译注解
-- `DictTranslation` 字典翻译标识注解
-- `EncryptionField` 数据库加密字段注解，详细使用见[数据权限模块](/platform/servererver/starter/数据权限.md)
 - `Idempotent` 幂等性拦截注解，用于拦截前端重复提交的请求，详细见[幂等处理器模块](幂等处理器.md)
 - `IgnoreAuth` 忽略鉴权注解，可以加在`Controller`的方法或类上，访问时不在进行鉴权，加在非`Controller`的地方无效，详细使用见[登录鉴权模块](/platform/servererver/starter/登录鉴权.md)
 - `JobLog` 定时任务日志记录注解，控制是该定时方法是否需要记录日志，详细使用见[Quartz定时任务模块](/platform/servererver/starter/Quartz定时任务.md)
-- `NestedPermission` 嵌套权限控制注解，需要配合Permission注解一起使用，主要用来解决在`@Permission`声明的方法调用其他子方法时，
-忽略子方法执行时的数据权限拦截，详细使用见[数据权限模块](/platform/servererver/starter/数据权限.md)
-- `Permission` 权限控制注解，可以添加到方法和类上，添加后所执行的SQL会进行数据权限相关的控制，详细使用见[数据权限模块](/platform/servererver/starter/数据权限.md)
+- `NestedPermission` 嵌套权限控制注解，需要配合Permission注解一起使用，主要用来解决在`@Permission`声明的方法调用其他子方法时， 忽略子方法执行时的数据权限拦截，详细使用见[数据权限模块](/platform/servererver/starter/数据权限.md)
 - `OperateLog` 操作日志记录注解，`AOP`处理类自动拦截，记录对应的操作行为，可以进行重复的标注，详细使用见[审计日志模块](/platform/servererver/starter/审计日志.md)
+- `PermCode` 权限码鉴权注解,  用在Controller及对应的请求方法上时，可以通过用户是否拥有该请求路径的权限码，来决定是否可以通行本次请求, 
+  2.放在数据库实体类及字段上时，会在启用查询字段权限的时候，对用户没有权限码的字段不进行SQL查询
+- `Permission` 权限控制注解，可以添加到方法和类上，添加后所执行的SQL会进行数据权限相关的控制，详细使用见[数据权限模块](/platform/servererver/starter/数据权限.md)
 - `QueryParam` 查询参数构造注解，通过标注在实体类，可以让实体类转换成`MyBatis-Plus`的`QueryWrapper`查询构造器，详细使用见[超级查询器模块](超级查询器.md)
+- 
 ## 常量枚举类
 
 - `CommonCode` 公共常量，包括公共字段名称、删除标记字段名一类的常量
@@ -30,11 +29,11 @@
 - `BaseDto` 基础Dto类，包含主键，创建时间，最后修改时间，版本号四个属性
 - `KeyValue` key/value键值对象
 - `LabelValue` 通常用于返回给前台用来展示下拉列表的数据结构
-- `PageParam` 分页查询参数
 - `OrderParam` 排序参数
+- `PageParam` 分页查询参数
 - `ErrorResult` 错误响应类，业务出现异常后返回的响应类，携带链路追踪ID `trackId`，可以用于追踪整个错误的请求链路，详见[日志扩展模块](日志扩展.md#链路追踪)
-- `ResResult` 正常响应类
-- `PageResult` 分页响应类
+- `ResResult` 正常响应类,用于进行响应值的返回
+- `PageResult` 分页响应类,用于响应分页数据
 - `Res` 返回工具类，可以快捷构造各种正常响应类
 ## 基础接口
 
@@ -57,17 +56,17 @@
 ## 基础工具类
 
 - `BigDecimalUtil` 大数工具类，处理`BigDecimal`类型的简单加减乘除等操作
-- `CertUtil` 证书工具类
+- `CertUtil` 证书工具类, 用户获取证书信息等操作
 - `CollUtil` 集合工具类，扩展自`hutool`的工具类
 - `FileUtil` 文件操作工具类，扩展自`hutool`的工具类
 - `LocalDateTimeUtil` `JDK8`时间工具类，扩展自`hutool`的工具类
 - `RegexUtil` 正则验证工具类，提供一些默认的校验方法，例如校验邮箱号、手机号等
 - `ResultConvertUtil` 结果转换工具类工具类，主要用于`Dto`与`Entity`之间的转换
-- `StreamUtil` 流工具类，包含复制流到字符串方法
+- `SqlInjectionUtil` sql注入处理工具类
 - `TreeBuildUtil` 构建数据树工具类，见[TreeBuildUtil使用说明](#TreeBuildUtil使用说明)
 - `ValidationUtil` 属性校验工具类
 ## 枚举和其他
-- `ValidationGroup` 校验分组标记，提供了增加、编辑、删除、查询四种常见场合的分组类标识
+- `ValidationGroup` 校验分组标记，提供了增加(add)、编辑(edit)、删除(delete)、查询(query)四种常见场合的分组类标识
 
 ## TreeBuildUtil使用说明
 > 功能是将一个`List`列表类型的数据，转换成树状列表的结果
@@ -108,7 +107,7 @@ private List<PermMenuDto> recursiveBuildTree(List<PermMenuDto> permissions) {
 
 ## 主要依赖
 
-- `lombok`
+- `lombok` 私有依赖,用于简化一系列java代码的写法
 - `commons-lang3`
 - `jackson-databind` `jackson`数据绑定
 - `commons-collections4`
@@ -121,4 +120,4 @@ private List<PermMenuDto> recursiveBuildTree(List<PermMenuDto> permissions) {
 - `javax.servlet-api`
 - `swagger-annotations` `swagger3` 注解依赖
 - `springdoc-openapi-common` `swagger3` 的实现`springdoc`框架，引入这个包是为了引入相关依赖
-- `slf4j-api` 日志
+- `slf4j-api` 日志门面

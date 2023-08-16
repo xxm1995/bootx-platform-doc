@@ -1,5 +1,7 @@
+::: tip 
+这个模块属于系统的必须依赖，不能被拆除
+:::
 ## 功能
-
 - 提供`JacksonUtil`工具类，用于需要进行`Jackson`解析的场合，支持泛型对象的反序列
 - 提供 `java8` 时间序列化类，在`Jackson`序列化时对`JDK8`新增的时间类进行支持
 - 提供`Long` 类型序列化为`String`类型的序列化类，处理前端长整形精度丢失问题
@@ -8,7 +10,7 @@
 - 提供`Jackson2ObjectMapper`相关配置（`Spring MVC`进行参数和结果转换），支持`jdk8`，`LongToString`等配置
 ## 使用说明
 ::: warning
-系统中`ObjectMapper`序列化配置主要分为两类，同时`yml`中对`JackSon`进行的配置会失效，需要进行注意
+系统中`ObjectMapper`序列化配置主要分为两类，同时在配置文件`application.yml`中对`JackSon`进行的配置会失效，需要进行注意
 :::
 
 | Bean名称           | 说明                           |
@@ -78,3 +80,4 @@
   }
 ]
 ```
+

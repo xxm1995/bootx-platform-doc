@@ -1,5 +1,6 @@
 /**
  * 脚手架文档
+ * @type {()=>import('./theme-default/config').DefaultTheme.NavItem[]}
  */
 export const Platform  = {
     '/platform/overview/': [
