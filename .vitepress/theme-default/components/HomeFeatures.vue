@@ -8,7 +8,12 @@
             :key="index"
             class="feature"
           >
-            <h2 class="title" v-if="feature.title">{{ feature.title }}</h2>
+            <h2 class="title" v-if="feature.title">
+              <template v-if="feature.url" >
+                <a :href="feature.url">{{feature.title}}</a>
+              </template>
+              <template v-else>{{feature.title}}</template>
+            </h2>
             <p class="details" v-if="feature.details">{{ feature.details }}</p>
           </section>
         </div>
@@ -33,6 +38,13 @@ const features = computed(() => {
 </script>
 
 <style scoped>
+a{
+    text-decoration:none!important;
+}
+
+a:hover{
+    text-decoration:underline
+}
 .home-features {
   margin: 0 auto;
   padding: 2.5rem 0 2.75rem;

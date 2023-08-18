@@ -6,15 +6,15 @@
 
 - `BigField` 数据库大字段标识注解，详细使用见[MyBatis-Plus扩展模块](MyBatis-Plus扩展.md)
 - `CountTime` 获取方法执行的时间
-- `DataVersionLog` 数据版本日志注解，添加到要记录版本数据的数据库实体类上，详细使用见[审计日志模块](/platform/servererver/starter/审计日志.md)
+- `DataVersionLog` 数据版本日志注解，添加到要记录版本数据的数据库实体类上，详细使用见[审计日志模块](/platform/server/starter/审计日志.md)
 - `Idempotent` 幂等性拦截注解，用于拦截前端重复提交的请求，详细见[幂等处理器模块](幂等处理器.md)
-- `IgnoreAuth` 忽略鉴权注解，可以加在`Controller`的方法或类上，访问时不在进行鉴权，加在非`Controller`的地方无效，详细使用见[登录鉴权模块](/platform/servererver/starter/登录鉴权.md)
-- `JobLog` 定时任务日志记录注解，控制是该定时方法是否需要记录日志，详细使用见[Quartz定时任务模块](/platform/servererver/starter/Quartz定时任务.md)
-- `NestedPermission` 嵌套权限控制注解，需要配合Permission注解一起使用，主要用来解决在`@Permission`声明的方法调用其他子方法时， 忽略子方法执行时的数据权限拦截，详细使用见[数据权限模块](/platform/servererver/starter/数据权限.md)
-- `OperateLog` 操作日志记录注解，`AOP`处理类自动拦截，记录对应的操作行为，可以进行重复的标注，详细使用见[审计日志模块](/platform/servererver/starter/审计日志.md)
+- `IgnoreAuth` 忽略鉴权注解，可以加在`Controller`的方法或类上，访问时不在进行鉴权，加在非`Controller`的地方无效，详细使用见[登录鉴权模块](/platform/server/starter/登录鉴权.md)
+- `JobLog` 定时任务日志记录注解，控制是该定时方法是否需要记录日志，详细使用见[Quartz定时任务模块](/platform/server/starter/Quartz定时任务.md)
+- `NestedPermission` 嵌套权限控制注解，需要配合Permission注解一起使用，主要用来解决在`@Permission`声明的方法调用其他子方法时， 忽略子方法执行时的数据权限拦截，详细使用见[数据权限模块](/platform/server/starter/数据权限.md)
+- `OperateLog` 操作日志记录注解，`AOP`处理类自动拦截，记录对应的操作行为，可以进行重复的标注，详细使用见[审计日志模块](/platform/server/starter/审计日志.md)
 - `PermCode` 权限码鉴权注解,  用在Controller及对应的请求方法上时，可以通过用户是否拥有该请求路径的权限码，来决定是否可以通行本次请求, 
   2.放在数据库实体类及字段上时，会在启用查询字段权限的时候，对用户没有权限码的字段不进行SQL查询
-- `Permission` 权限控制注解，可以添加到方法和类上，添加后所执行的SQL会进行数据权限相关的控制，详细使用见[数据权限模块](/platform/servererver/starter/数据权限.md)
+- `Permission` 权限控制注解，可以添加到方法和类上，添加后所执行的SQL会进行数据权限相关的控制，详细使用见[数据权限模块](/platform/server/starter/数据权限.md)
 - `QueryParam` 查询参数构造注解，通过标注在实体类，可以让实体类转换成`MyBatis-Plus`的`QueryWrapper`查询构造器，详细使用见[超级查询器模块](超级查询器.md)
 - 
 ## 常量枚举类
@@ -38,8 +38,8 @@
 ## 基础接口
 
 - `EntityBaseFunction` 数据库entity基础声明方法，实现该接口将会拥有一个转换成Dto的方法
-- `ParamService` 参数获取服务(必须要有实现类，并注入到Spring容器中)，见[基础服务模块](/platform/servererver/service/基础服务.md)
-- `SystemKeyValueService` key/value键值对象读写接口服务(必须要有实现类，并注入到Spring容器中)，见[基础服务模块](/platform/servererver/service/基础服务.md)
+- `ParamService` 参数获取服务(必须要有实现类，并注入到Spring容器中)，见基础服务模块中的[参数配置](/platform/server/service/baseapi/参数配置.md)
+- `SystemKeyValueService` key/value键值对象读写接口服务(必须要有实现类，并注入到Spring容器中)，见[基础服务模块](/platform/server/service/baseapi/基础服务.md)
 - `UserDetailService` 用户信息接口服务(必须要有实现类，并注入到Spring容器中)，用来进行一些用户信息的公共查询操作，主要用在不能依赖`身份识别与访问管理（IAM）`的模块
 ## 公共异常
 - `BizException` 业务异常基类，常见的业务异常可以继承它

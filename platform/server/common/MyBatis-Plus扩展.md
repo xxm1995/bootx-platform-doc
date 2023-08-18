@@ -17,11 +17,10 @@
 - StringListTypeHandler `List<String>` 的类型转换器类
 
 ## 数据库基础类
-- MpBaseEntity 
-- MpCreateEntity
-- MpDelEntity
-- MpIdEntity
-
+- MpBaseEntity  基础实体类 (带逻辑删除)
+- MpDelEntity    基础实体类，继承自MpCreateEntity，然后增加了更新时间和更新人 (真实删除)
+- MpCreateEntity  创建实体类，包含创建时间和创建人 (真实删除)
+- MpIdEntity     主键实体类 (只包含主键字段)
 
 ## 注册插件
 对原生的`Mybatis Plus`的插件注册进行增强，可以指定不同插件的先后顺序，用`MpInterceptor`对象将编写的Mp插件进行包装，然后注册到Spring Bean容器中即可，参照如下数据权限的插件注册代码

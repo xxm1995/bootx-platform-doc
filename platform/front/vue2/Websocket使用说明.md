@@ -38,5 +38,5 @@
   }
   ```
 ## 用户全局消息通知
-见 `commons工具配置封装` 中[Websocket封装](/platform/servererver/common/Websocket封装.md) 中的说明，对应前端代码见`src/websocket/userGlobalWebSocker.js`，
+见 `commons工具配置封装` 中[Websocket封装](/platform/server/common/Websocket封装.md) 中的说明，对应前端代码见`src/websocket/userGlobalWebSocker.js`，
 建立连接的时机为登陆后自动触发

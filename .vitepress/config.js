@@ -9,9 +9,9 @@ const {Safety} = require("./doc/safety");
  */
 module.exports = {
     base: '/',
-    title: 'Bootx Platform',
+    title: 'Bootx 项目集',
     lang: 'zh-CN',
-    description: '一个开源多功能的后端管理脚手架',
+    description: '一个多功能的开源项目集',
     head: createHead(),
     themeConfig: {
         repo: 'bootx/bootx-platform',
@@ -75,10 +75,6 @@ function createNav() {
                     link: "/platform/overview/config/项目启动",
                 },
                 {
-                    text: '更新日志',
-                    link: '/platform/changelog/更新日志',
-                },
-                {
                     text: "FAQ",
                     link: "/platform/overview/faq/常见问题",
                 },
@@ -101,7 +97,7 @@ function createNav() {
                 },
                 {
                     text: "业务服务",
-                    link: "/platform/server/service/基础服务",
+                    link: "/platform/server/service/baseapi/数据字典",
                 },
                 {
                     text: "其他功能",
@@ -140,7 +136,7 @@ function createNav() {
             ]
         },
         {
-            text: "DaxPay",
+            text: "BpmPlus",
             items: [
                 {
                     text: "快速指南",

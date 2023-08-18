@@ -1,7 +1,7 @@
 # 安装Docker
 
 ::: tip 推荐
-使用道客云提供的安装脚本进行一键安装： [https://get.daocloud.io/](https://get.daocloud.io/)
+使用提供的安装脚本进行一键安装： [https://github.com/rancher/install-docker](https://github.com/rancher/install-docker)
 :::
 ## 使用 Docker 仓库进行安装
 在新主机上首次安装 Docker Engine-Community 之前，需要设置 Docker 仓库。之后，您可以从仓库安装和更新 Docker。
@@ -43,14 +43,26 @@ sudo systemctl daemon-reload
 sudo systemctl restart docker
 ```
 
-## 道客云社区快速安装脚本
-> [https://get.daocloud.io/](https://get.daocloud.io/)
 
-安装docker-compose
-```bash
-curl -L "https://get.daocloud.io/docker/compose/releases/download/1.29.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-chmod +x /usr/local/bin/docker-compose
-```
+## 安装docker-compose
+> 可以从 Github 上下载它的二进制包来使用，最新发行的版本地址：[https://github.com/docker/compose/releases](https://github.com/docker/compose/releases)
+
+1. 运行以下命令以下载 Docker Compose 的当前稳定版本
+  ```bash
+  sudo curl -L "https://github.com/docker/compose/releases/download/v2.2.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  ```
+2. 将可执行权限应用于二进制文件
+  ```bash
+  sudo chmod +x /usr/local/bin/docker-compose
+  ```
+3. 创建软链
+  ```bash
+  sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+  ```
+4. 测试是否安装成功
+  ```bash
+  docker-compose --version
+  ```
 ## 删除none镜像脚本
 ```bash
 # 直接删除带none的镜像，报错了。提示先停止容器。

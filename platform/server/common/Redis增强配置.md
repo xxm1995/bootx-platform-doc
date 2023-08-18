@@ -80,7 +80,6 @@ public class InventoryExpiredListener implements KeyExpiredListener {
 
 ```
 ## 关键类
-
 - `RedisClient` redis便捷封装请求类
 - `RedisClientAutoConfiguration` Redis自动配置类
 - `KeyExpiredListener` Key过期事件接口
