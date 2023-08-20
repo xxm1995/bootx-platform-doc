@@ -212,10 +212,6 @@ export const Platform  = {
           link: '/platform/server/service/baseapi/参数配置',
         },
         {
-          text: '行政区划管理',
-          link: '/platform/server/service/baseapi/行政区划管理',
-        },
-        {
           text: '验证码管理',
           link: '/platform/server/service/baseapi/验证码管理',
         },

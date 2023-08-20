@@ -35,3 +35,5 @@ bootx:
         # 查询方式
         search-type: cache
 ```
+## ip2region文件地址
+[GITEE地址](https://gitee.com/lionsoul/ip2region/blob/master/data/ip2region.xdb)

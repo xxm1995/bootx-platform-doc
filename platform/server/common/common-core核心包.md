@@ -37,9 +37,9 @@
 - `Res` 返回工具类，可以快捷构造各种正常响应类
 ## 基础接口
 
-- `EntityBaseFunction` 数据库entity基础声明方法，实现该接口将会拥有一个转换成Dto的方法
+- `EntityBaseFunction` 数据库entity基础声明方法，实现该接口将会有一个转换成Dto的方法
 - `ParamService` 参数获取服务(必须要有实现类，并注入到Spring容器中)，见基础服务模块中的[参数配置](/platform/server/service/baseapi/参数配置.md)
-- `SystemKeyValueService` key/value键值对象读写接口服务(必须要有实现类，并注入到Spring容器中)，见[基础服务模块](/platform/server/service/baseapi/基础服务.md)
+- `SystemKeyValueService` key/value键值对象读写接口服务(必须要有实现类，并注入到Spring容器中)，见[基础服务模块](/platform/server/service/baseapi/键值对存储.md)
 - `UserDetailService` 用户信息接口服务(必须要有实现类，并注入到Spring容器中)，用来进行一些用户信息的公共查询操作，主要用在不能依赖`身份识别与访问管理（IAM）`的模块
 ## 公共异常
 - `BizException` 业务异常基类，常见的业务异常可以继承它

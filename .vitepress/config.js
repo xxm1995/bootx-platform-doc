@@ -84,15 +84,11 @@ function createNav() {
             text: "后端文档",
             items: [
                 {
-                    text: "安全体系",
-                    link: "/platform/safety/什么是安全",
-                },
-                {
-                    text: "工具与配置",
+                    text: "基础组件",
                     link: "/platform/server/common/common-core核心包",
                 },
                 {
-                    text: "功能组件",
+                    text: "功能服务",
                     link: "/platform/server/starter/登录鉴权",
                 },
                 {
@@ -102,7 +98,11 @@ function createNav() {
                 {
                     text: "其他功能",
                     link: "/platform/server/other/行政区划",
-                }
+                },
+              {
+                text: "安全体系",
+                link: "/platform/safety/什么是安全",
+              }
             ]
         },
         {
@@ -123,7 +123,7 @@ function createNav() {
             items: [
                 {
                     text: "快速指南",
-                    link: "/platform/front/vue2/通用Mixin",
+                    link: "/daxpay/overview/项目介绍",
                 },
                 {
                     text: "业务服务",
