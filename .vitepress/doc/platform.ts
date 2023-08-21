@@ -205,7 +205,7 @@ export const Platform  = {
       children: [
         {
           text: '数据字典',
-          link: '/platform/server/service/iam/数据字典',
+          link: '/platform/server/service/baseapi/数据字典',
         },
         {
           text: '参数配置',
