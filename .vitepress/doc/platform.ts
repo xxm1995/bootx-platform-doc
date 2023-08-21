@@ -265,8 +265,8 @@ export const Platform  = {
           link: '/platform/server/service/iam/菜单管理',
         },
         {
-          text: '请求权限管理',
-          link: '/platform/server/service/iam/请求权限管理',
+          text: '访问权限管理',
+          link: '/platform/server/service/iam/访问权限管理',
         },
         {
           text: '数据权限管理',

@@ -16,7 +16,7 @@ features:
     url: /platform/safety/什么是安全
   - title: 🔩 DaxPay
     details: 支持单通道支付、聚合支付、组合支付、部分和全部退款等支付功能，对支付宝、微信、云闪付、现金、钱包、储值卡等多种支付方式进行实现
-    url: / 
+    url: /daxpay/overview/项目介绍
   - title: 🔑 Bootx-Platform
     details: 基础脚手架，作为其他项目的底层脚手架，提供了底层的技术支撑，并针对一系列通用业务，提供了解决方案。
     url: platform/overview/guide/项目介绍

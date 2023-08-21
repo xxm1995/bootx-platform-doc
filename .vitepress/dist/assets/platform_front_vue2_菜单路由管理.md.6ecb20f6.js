@@ -1,0 +1,1 @@
+import{_ as t,c as e,o as r}from"./app.f857f1b0.js";const d='{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"platform/front/vue2/\u83DC\u5355\u8DEF\u7531\u7BA1\u7406.md"}',a={};function o(_,c,n,s,p,f){return r(),e("div")}var l=t(a,[["render",o]]);export{d as __pageData,l as default};

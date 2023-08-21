@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a}from"./app.f857f1b0.js";const f='{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"daxpay/server/payment/\u652F\u4ED8\u670D\u52A1.md"}',r={};function o(s,_,c,n,p,d){return a(),t("div")}var m=e(r,[["render",o]]);export{f as __pageData,m as default};

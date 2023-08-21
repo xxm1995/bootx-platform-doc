@@ -1,1 +1,0 @@
-import{_ as e,c as r,o as t,a}from"./app.e9c6ffe7.js";const m='{"title":"\u53C2\u8003\u5185\u5BB9","description":"","frontmatter":{},"headers":[],"relativePath":"platform/safety/\u53C2\u8003\u5185\u5BB9.md"}',n={},o=a("",6),_=[o];function p(c,s,d,i,h,l){return t(),r("div",null,_)}var g=e(n,[["render",p]]);export{m as __pageData,g as default};

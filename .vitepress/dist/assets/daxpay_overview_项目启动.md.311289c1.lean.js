@@ -1,1 +1,0 @@
-import{_ as e,c as t,o as a}from"./app.9c6e725a.js";const f='{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"daxpay/overview/\u914D\u7F6E\u6587\u4EF6\u8BF4\u660E.md"}',r={};function o(_,c,s,n,p,i){return a(),t("div")}var l=e(r,[["render",o]]);export{f as __pageData,l as default};
