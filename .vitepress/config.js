@@ -156,11 +156,11 @@ function createNav() {
             text: '源码地址',
             items: [
                 {
-                    text: 'Bootx-Platform(Github)',
+                    text: 'Platform(Github)',
                     link: 'https://github.com/xxm1995/bootx-platform',
                 },
                 {
-                    text: 'Bootx-Platform(Gitee)',
+                    text: 'Platform(Gitee)',
                     link: 'https://gitee.com/bootx/bootx-platform',
                 },
                 {

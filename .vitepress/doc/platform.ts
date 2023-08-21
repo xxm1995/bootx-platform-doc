@@ -205,7 +205,7 @@ export const Platform  = {
       children: [
         {
           text: '数据字典',
-          link: '/platform/server/service/baseapi/数据字典',
+          link: '/platform/server/service/iam/数据字典',
         },
         {
           text: '参数配置',
@@ -240,7 +240,42 @@ export const Platform  = {
     {
       text: '身份识别与访问管理',
       children: [
-
+        {
+          text: '权限体系',
+          link: '/platform/server/service/iam/权限体系',
+        },
+        {
+          text: '客户端管理',
+          link: '/platform/server/service/iam/客户端管理',
+        },
+        {
+          text: '安全策略配置',
+          link: '/platform/server/service/iam/安全策略配置',
+        },
+        {
+          text: '认证鉴权',
+          link: '/platform/server/service/iam/认证鉴权',
+        },
+        {
+          text: '角色管理',
+          link: '/platform/server/service/iam/角色管理',
+        },
+        {
+          text: '菜单管理',
+          link: '/platform/server/service/iam/菜单管理',
+        },
+        {
+          text: '请求权限管理',
+          link: '/platform/server/service/iam/请求权限管理',
+        },
+        {
+          text: '数据权限管理',
+          link: '/platform/server/service/iam/数据权限管理',
+        },
+        {
+          text: '权限码管理',
+          link: '/platform/server/service/iam/权限码管理',
+        },
       ]
     },
     {
