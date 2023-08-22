@@ -1,14 +1,20 @@
-import Theme from '../theme-default/index';
-
-import 'windi-base.css';
-import 'windi-components.css';
-import 'windi-utilities.css';
-
-import './styles/var.css';
-import './styles/custom.css';
-import './styles/layout.css';
-import './styles/code-theme.css';
+import { h } from 'vue'
+import Theme from 'vitepress/theme'
+// @ts-ignore
+import SvgImage from './components/SvgImage.vue'
+// @ts-ignore
+import LayoutBottom from './components/LayoutBottom.vue'
+import './styles/vars.css'
+import './custom.css'
 
 export default {
   ...Theme,
-};
+  Layout() {
+    return h(Theme.Layout, null, {
+      'layout-bottom': () => h(LayoutBottom),
+    })
+  },
+  enhanceApp({ app }) {
+    app.component('SvgImage', SvgImage)
+  }
+}

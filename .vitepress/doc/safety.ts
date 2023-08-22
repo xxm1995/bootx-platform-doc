@@ -7,7 +7,7 @@ export const Safety  = {
     '/platform/safety': [
         {
             text: "安全体系",
-            children: [
+            items: [
                 {
                     text: '什么是安全',
                     link: '/platform/safety/什么是安全',

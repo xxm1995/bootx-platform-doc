@@ -2,24 +2,25 @@
   "name": "bootx-platform-docs",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://gitee.com/bootx/bootx-platform-doc",
+  "repository": "https://gitee.com/bootx/bootx",
   "author": "bootx",
   "license": "Apache 2.0",
+  "type": "module",
   "scripts": {
-    "dev": "vitepress dev --host",
-    "build": "vitepress build",
-    "serve": "vitepress serve"
+    "dev": "vitepress dev .  --host",
+    "build": "vitepress build .",
+    "serve": "vitepress serve ."
   },
   "devDependencies": {
-    "prettier": "^2.3.2",
-    "vite-plugin-components": "^0.10.4",
-    "vite-plugin-icons": "^0.6.3",
-    "vite-plugin-windicss": "^1.1.1",
-    "vitepress": "^0.22.4",
-    "windicss": "^3.1.3"
+    "chalk": "^4.1.0",
+    "gray-matter": "^4.0.3",
+    "lodash": "^4.17.21",
+    "sass": "^1.57.1",
+    "vite": "2.9.16",
+    "vitepress": "1.0.0-rc.4",
+    "yorkie": "^2.0.0"
   },
   "dependencies": {
-    "@iconify/json": "^1.1.362",
-    "@vueuse/core": "^5.0.3"
+    "vue": "3.3.4"
   }
 }
