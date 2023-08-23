@@ -1,7 +1,6 @@
 # Mixin使用
 ::: tip
-基于`vueuse`中的`useWebSocket`进行开发[useWebSocket文档](https://vueuse.org/core/useWebSocket)，
-同时提供默认的全局消息通知功能实现`UserGlobalWebSocker`。
+基于`vueuse`中的`useWebSocket`进行开发，[useWebSocket文档地址](https://vueuse.org/core/useWebSocket)。 同时提供默认的全局消息通知功能实现`UserGlobalWebSocker`。
 :::
 ## useWebSocket介绍
 ### 引用
@@ -12,16 +11,16 @@ import { useWebSocket } from '@vueuse/core'
 const { status, data, send, open, close } = useWebSocket('ws://websocketurl')
 ```
 ### 常用参数
-- immediate 自动连接（默认启用）
-- autoClose 自动关闭连接（默认启用）
-- autoReconnect 自动重新连接错误（默认禁用）
-- heartbeat 每个给定时间发送一条小消息（心跳）以保持连接处于活动状态（默认禁用）
+- `immediate` 自动连接（默认启用）
+- `autoClose` 自动关闭连接（默认启用）
+- `autoReconnect` 自动重新连接错误（默认禁用）
+- `heartbeat` 每个给定时间发送一条小消息（心跳）以保持连接处于活动状态（默认禁用）
 
 ### 回调函数
-- onConnected 连接成功回调
-- onDisconnected 关闭连接回调
-- onError 错误回调
-- onMessage 接收到消息回调
+- `onConnected` 连接成功回调
+- `onDisconnected` 关闭连接回调
+- `onError` 错误回调
+- `onMessage` 接收到消息回调
 
 ## 用户全局消息通知
 ::: tip
@@ -30,7 +29,7 @@ const { status, data, send, open, close } = useWebSocket('ws://websocketurl')
 :::
 
 ### 使用
-导入`WebsocketNotice`组件，使用提供的方法来订阅指定主题的消息，和解除对应主题的订阅。
+导入`WebsocketNotice`组件，使用提供的方法来订阅指定主题的消息，和取消对应主题的订阅。
 ```javascript
 import { publishWsEvent, listenerEvent } from '/@/logics/websocket/WebsocketNotice'
 ```

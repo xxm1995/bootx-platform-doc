@@ -1,9 +1,10 @@
-__## useDict(字典)
+# 自定义Hooks
+## useDict(字典)
 ### 功能
 - 在系统打开时缓存字典数据，减少对后端的请求次数
 - 根据字典CODE值获取字典项列表，提供同步和异步的方法
 - 字典项翻译，将code码转换成显示的值
-## 使用
+### 使用
 ```typescript
     import { useDict } from '/@/hooks/bootx/useDict'
     const { dictConvert } = useDict()

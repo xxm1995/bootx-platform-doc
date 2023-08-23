@@ -88,3 +88,7 @@
     margin: 0;
   }
 }
+/* 强制覆盖 VitePress 样式 */
+.vp-doc .header-anchor:before {
+    content: none;!important;
+}

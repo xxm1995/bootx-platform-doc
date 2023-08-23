@@ -281,7 +281,30 @@ export const Platform  = {
         {
             text: '通知服务',
             items: [
-
+                {
+                    text: '站内信',
+                    link: '/platform/server/service/notice/站内信',
+                },
+                {
+                    text: '短信通知',
+                    link: '/platform/server/service/notice/短信通知',
+                },
+                {
+                    text: '邮件通知',
+                    link: '/platform/server/service/notice/邮件通知',
+                },
+                {
+                    text: '钉钉通知',
+                    link: '/platform/server/service/notice/钉钉通知',
+                },
+                {
+                    text: '微信通知',
+                    link: '/platform/server/service/notice/微信通知',
+                },
+                {
+                    text: '企业微信通知',
+                    link: '/platform/server/service/notice/企业微信通知',
+                },
             ]
         },
         {
@@ -302,42 +325,32 @@ export const Platform  = {
                 {
                     text: '行政区划',
                     link: '/platform/server/other/行政区划',
-                }
+                },
+                {
+                    text: '代码生成器',
+                    link: '/platform/server/other/代码生成器',
+                },
+                {
+                    text: '微信公众号管理',
+                    link: '/platform/server/other/微信公众号管理.md',
+                },
             ]
         }
     ],
-    '/platform/front/vue2/': [
+    '/platform/front/vue3/': [
         {
-            text: '前端使用说明',
+            text: '前端概览',
             items: [
                 {
-                    text: '通用Mixin',
-                    link: '/platform/front/vue2/通用Mixin',
+                    text: '前端介绍 ',
+                    link: '/platform/front/vue3/前端介绍',
                 },
                 {
-                    text: 'Websocket使用说明',
-                    link: '/platform/front/vue2/Websocket使用说明',
-                },
-                {
-                    text: '菜单路由管理',
-                    link: '/platform/front/vue2/菜单路由管理',
-                },
-                {
-                    text: '数据脱敏',
-                    link: '/platform/front/vue2/数据脱敏',
-                },
-                {
-                    text: '查询器组件使用',
-                    link: '/platform/front/vue2/查询器组件使用',
-                },
-                {
-                    text: '字典翻译组件',
-                    link: '/platform/front/vue2/字典翻译组件',
+                    text: '功能介绍 ',
+                    link: '/platform/front/vue3/功能介绍',
                 },
             ],
         },
-    ],
-    '/platform/front/vue3/': [
         {
             text: '内置功能',
             items: [
@@ -365,6 +378,10 @@ export const Platform  = {
                 {
                     text: '角色选择组件',
                     link: '/platform/front/vue3/角色选择组件',
+                },
+                {
+                    text: '通用数据导入组件',
+                    link: '/platform/front/vue3/通用数据导入组件',
                 }
             ]
         },
@@ -373,5 +390,62 @@ export const Platform  = {
             link: '/platform/front/vue3/自定义Hooks',
         }
     ],
-    '/platform/front/mobile/ ': [],
+    '/platform/front/mobile/': [
+        {
+            text: '前端概览',
+            items: [
+                {
+                    text: '移动端介绍 ',
+                    link: '/platform/front/mobile/移动端介绍',
+                },
+                {
+                    text: '功能介绍 ',
+                    link: '/platform/front/mobile/功能介绍',
+                },
+                {
+                    text: '工作台 ',
+                    link: '/platform/front/mobile/工作台',
+                },
+            ],
+        },
+    ],
+
+    '/platform/front/bigscreen/': [
+        {
+            text: '前端概览',
+            items: [
+                {
+                    text: '可视化介绍',
+                    link: '/platform/front/bigscreen/可视化介绍',
+                },
+                {
+                    text: '后端对接',
+                    link: '/platform/front/bigscreen/后端对接',
+                },
+                {
+                    text: '编辑器',
+                    link: '/platform/front/bigscreen/编辑器',
+                },
+                {
+                    text: '单点登录',
+                    link: '/platform/front/bigscreen/单点登录',
+                },
+            ],
+        },
+    ],
+    '/platform/front/mobile/ ': [
+        {
+            text: '内置功能',
+            items: [
+                {
+                    text: '移动端介绍 ',
+                    link: '/platform/front/mobile/移动端介绍',
+                },
+                {
+                    text: '工作台 ',
+                    link: '/platform/front/mobile/工作台',
+                },
+            ]
+        },
+    ],
 }

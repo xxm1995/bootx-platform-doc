@@ -12,9 +12,8 @@ import {DaxPay} from "./doc/daxpay";
 import {Safety} from "./doc/safety";
 import {HeadConfig} from "vitepress/types/shared";
 
-
 const ogDescription =
-    '低代码数据可视化开发平台, 开源、精美、便捷、规范、交互自然。'
+    '开源、精美、便捷、规范、交互自然。'
 const ogImage = '/logo.png'
 const ogTitle = 'Bootx'
 const ogUrl = '/'
@@ -28,14 +27,13 @@ export default defineConfig({
 
     themeConfig: {
         logo: '/logo.png',
-
         editLink: {
             text: '为此页提供修改建议',
             pattern: 'https://gitee.com/bootx/bootx/'
         },
         // 开启本地搜索
         search : {
-            provider: "local"
+            provider: "local",
         },
         // 顶部导航栏
         nav: createNav(),
@@ -131,12 +129,16 @@ function createNav() {
             text: "前端",
             items: [
                 {
-                    text: "Vue3",
+                    text: "管理端",
                     link: "/platform/front/vue3/路由配置",
                 },
                 {
                     text: "移动端",
-                    link: "/front/mobile",
+                    link: "/platform/front/mobile/移动端介绍",
+                },
+                {
+                    text: "可视化大屏",
+                    link: "/platform/front/bigscreen/可视化介绍",
                 }
             ]
         },
@@ -161,16 +163,12 @@ function createNav() {
             text: "BpmPlus",
             items: [
                 {
-                    text: "快速指南",
-                    link: "/platform/front/vue2/通用Mixin",
-                },
-                {
                     text: "业务服务",
-                    link: "/platform/front/vue3/路由配置",
+                    link: "/bpmplus/front/vue3/路由配置",
                 },
                 {
                     text: "二次开发",
-                    link: "/front/mobile",
+                    link: "/bpmplus/mobile",
                 }
             ]
         },
@@ -204,16 +202,16 @@ function createNav() {
             text: '演示',
             items: [
                 {
-                    text: 'Vue2预览',
-                    link: 'http://web.platform.bootx.cn/',
-                },
-                {
-                    text: 'Vue3预览',
+                    text: 'platform',
                     link: 'http://v3.platform.bootx.cn/',
                 },
                 {
                     text: '可视化大屏',
                     link: 'http://visualization.platform.bootx.cn/',
+                },
+                {
+                    text: 'daxpay',
+                    link: 'http://daxpay.demo.bootx.cn/',
                 }
             ],
         },

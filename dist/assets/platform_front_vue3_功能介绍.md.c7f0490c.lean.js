@@ -1,0 +1,1 @@
+import{_ as t,o as e,c as r}from"./chunks/framework.6909765d.js";const d=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"platform/front/vue3/功能介绍.md","filePath":"platform/front/vue3/功能介绍.md"}'),a={name:"platform/front/vue3/功能介绍.md"};function o(n,s,c,_,f,p){return e(),r("div")}const i=t(a,[["render",o]]);export{d as __pageData,i as default};

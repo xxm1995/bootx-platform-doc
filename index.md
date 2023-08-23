@@ -30,14 +30,14 @@ features:
   - icon: 🔒️
     title: 安全可控
     details: 支持登录、密码安全策略，数据支持加密、脱敏，增强版RBAC架构，杜绝横向和垂直越权风险，并对登录、操作、数据变动进行审计记录
-  - icon: 💰️
-    title: DaxPay
-    details: 支持单通道支付、聚合支付、组合支付、部分和全部退款等支付功能，对支付宝、微信、云闪付、现金、钱包、储值卡等多种支付方式
   - icon: 🛡️
     title: Bootx-Platform
     details: 基础脚手架，作为其他项目的底层脚手架，提供了底层的技术支撑，核心模块发布到中央仓库，可以直接进行依赖
+  - icon: 💰️
+    title: DaxPay
+    details: 支持单通道支付、聚合支付、组合支付、部分和全部退款等支付功能，对支付宝、微信、云闪付、现金、钱包、储值卡等多种支付方式
   - icon: 🔔
-    title: Bpm-Plus
+    title: BpmPlus
     details: 集成Flowable+Bpmn.js工作流，保留核心功能并做扩展，如节点用户配置、驳回处理、任意节点退回、会签比例通过等
   - icon: 📦
     title: 可视化大屏
