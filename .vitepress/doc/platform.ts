@@ -245,8 +245,8 @@ export const Platform  = {
                     link: '/platform/server/service/iam/权限体系',
                 },
                 {
-                    text: '客户端管理',
-                    link: '/platform/server/service/iam/客户端管理',
+                    text: '认证终端管理',
+                    link: '/platform/server/service/iam/认证终端管理',
                 },
                 {
                     text: '安全策略配置',
