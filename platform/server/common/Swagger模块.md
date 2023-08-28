@@ -1,6 +1,6 @@
 # Swagger 模块
 ## 说明
-对Swagger3进行封装，方便配置，
+基于`Knife4j`+`Swagger3`进行实现，`Knife4j`是一个集Swagger2 和 OpenAPI3 为一体的增强解决方案，同时对接口文档分组做了些增强。
 ::: warning
 注意：所使用的的是Swagger3(SpringDoc)，不支持Swagger2相关的注解，因为Swagger2(SpringFox)已经在17年停止维护了，最新的Spirng Boot版本与Swagger2已经有不兼容的问题，
 所以为了后期更少出现问题，建议直接使用Swagger3(SpringDoc)
@@ -18,7 +18,7 @@
 | @ApiModelProperty  | @Schema(description= "字段描述")                                    | 对象属性上                                                               |
 | -                  | @ParameterObject                                                | Controller 方法参数上，使用@ParameterObject 注解修饰的请求参数对象，会将对象的每个字段添加为单独的请求参数 |
 
-## 使用演示
+## 使用样例
 ### Controller
 ```java
 @Tag(name ="系统参数")
@@ -58,7 +58,23 @@ public class SystemParameterDto extends BaseDto {
     private String paramKey;
 }
 ```
-## 自定义配置
+## 配置
+### knife4j配置
+> 见[knife4j配置](https://doc.xiaominfo.com/docs/quick-start#openapi3)，[增强特性](https://doc.xiaominfo.com/docs/features/enhance)
+
+```yaml
+# Swagger 增强配置
+knife4j:
+  # 是否开启增强模式
+  enable: true
+  basic:
+    enable: true
+    username: admin
+    password: 123123
+```
+
+
+### 自定义配置
 :::tip
 对多文档分组进行增强，支持一个分组文档扫描多个包，原理是通过Spring的动态注册Bean和数据绑定功能，在容器Bean初始化之前把`GroupedOpenApi`（相当于Swagger2的`Docket`）注入到Spring容器中来实现。数据权限.
 :::
