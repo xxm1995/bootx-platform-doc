@@ -1,1 +1,0 @@
-import{_ as s,o as a,c as n,X as e}from"./chunks/framework.6909765d.js";const y=JSON.parse('{"title":"Bootx-Platform-文档","description":"","frontmatter":{},"headers":[],"relativePath":"README.md","filePath":"README.md"}'),o={name:"README.md"},l=e("",5),t=[l];function p(c,r,i,d,h,_){return a(),n("div",null,t)}const m=s(o,[["render",p]]);export{y as __pageData,m as default};
