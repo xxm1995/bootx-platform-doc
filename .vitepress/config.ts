@@ -147,15 +147,15 @@ function createNav() {
             items: [
                 {
                     text: "快速指南",
-                    link: "/daxpay/overview/项目介绍",
+                    link: "/daxpay/overview/系统介绍",
                 },
                 {
-                    text: "业务服务",
-                    link: "/platform/front/vue3/路由配置",
+                    text: "支付对接",
+                    link: "/daxpay/gateway/接口调用说明",
                 },
                 {
-                    text: "二次开发",
-                    link: "/front/mobile",
+                    text: "系统配置",
+                    link: "/daxpay/config/支付配置",
                 }
             ]
         },
