@@ -151,7 +151,7 @@ function createNav() {
                 },
                 {
                     text: "支付对接",
-                    link: "/daxpay/gateway/接口调用说明",
+                    link: "/daxpay/gateway/接口清单",
                 },
                 {
                     text: "系统配置",
@@ -175,10 +175,6 @@ function createNav() {
         {
             text: '源码',
             items: [
-                {
-                    text: 'Platform(Github)',
-                    link: 'https://github.com/xxm1995/bootx-platform',
-                },
                 {
                     text: 'Platform(Gitee)',
                     link: 'https://gitee.com/bootx/bootx-platform',
