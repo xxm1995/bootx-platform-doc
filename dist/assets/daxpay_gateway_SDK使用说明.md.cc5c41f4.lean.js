@@ -1,1 +1,0 @@
-import{_ as a,o as e,c as t}from"./chunks/framework.6909765d.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"daxpay/gateway/SDK使用说明.md","filePath":"daxpay/gateway/SDK使用说明.md"}'),r={name:"daxpay/gateway/SDK使用说明.md"};function o(s,c,n,_,p,d){return e(),t("div")}const f=a(r,[["render",o]]);export{m as __pageData,f as default};

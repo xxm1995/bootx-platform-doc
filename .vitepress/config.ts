@@ -23,13 +23,14 @@ export default defineConfig({
     description: '一个多功能的开源项目集',
     lang: 'zh-CN',
     outDir: './dist',
+    lastUpdated: true,
     head: createHead(),
 
     themeConfig: {
         logo: '/logo.png',
         editLink: {
             text: '为此页提供修改建议',
-            pattern: 'https://gitee.com/bootx/bootx'
+            pattern: 'https://gitee.com/bootx/bootx/blob/master/:path'
         },
         // 开启本地搜索
         search : {
@@ -46,6 +47,9 @@ export default defineConfig({
         },
         config: md => {
             md.use(MarkDownItCustomAnchor)
+        },
+        image: {
+            lazyLoading: true
         }
     }
 })
@@ -143,7 +147,7 @@ function createNav() {
             ]
         },
         {
-            text: "DaxPay",
+            text: "支付网关(DaxPay)",
             items: [
                 {
                     text: "快速指南",
@@ -154,21 +158,8 @@ function createNav() {
                     link: "/daxpay/gateway/接口清单",
                 },
                 {
-                    text: "系统配置",
+                    text: "使用说明",
                     link: "/daxpay/config/支付配置",
-                }
-            ]
-        },
-        {
-            text: "BpmPlus",
-            items: [
-                {
-                    text: "业务服务",
-                    link: "/bpmplus/front/vue3/路由配置",
-                },
-                {
-                    text: "二次开发",
-                    link: "/bpmplus/mobile",
                 }
             ]
         },
@@ -176,11 +167,11 @@ function createNav() {
             text: '源码',
             items: [
                 {
-                    text: 'Platform(Gitee)',
+                    text: 'Bootx-Platform',
                     link: 'https://gitee.com/bootx/bootx-platform',
                 },
                 {
-                    text: 'DaxPay(Gitee))',
+                    text: '支付网关(DaxPay)',
                     link: 'https://gitee.com/bootx/dax-pay',
                 },
             ],

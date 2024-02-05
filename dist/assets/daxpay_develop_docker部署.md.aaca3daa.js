@@ -1,1 +1,0 @@
-import{_ as e,o as a,c as t}from"./chunks/framework.6909765d.js";const l=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"daxpay/develop/docker部署.md","filePath":"daxpay/develop/docker部署.md"}'),o={name:"daxpay/develop/docker部署.md"};function r(d,c,p,s,n,_){return a(),t("div")}const m=e(o,[["render",r]]);export{l as __pageData,m as default};
