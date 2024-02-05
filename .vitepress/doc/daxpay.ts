@@ -12,19 +12,15 @@ export const DaxPay = {
                 },
                 {
                     text: '功能列表',
-                    link: '/daxpay/overview/系统介绍',
+                    link: '/daxpay/overview/功能列表',
                 },
                 {
                     text: '系统架构',
-                    link: '/daxpay/overview/系统介绍',
-                },
-                {
-                    text: '系统常量表',
-                    link: '/daxpay/overview/系统介绍',
+                    link: '/daxpay/overview/系统架构',
                 },
                 {
                     text: '系统演示',
-                    link: '/daxpay/overview/系统介绍',
+                    link: '/daxpay/overview/系统演示',
                 },
             ]
         },
@@ -41,11 +37,11 @@ export const DaxPay = {
                 },
                 {
                     text: '数据表说明',
-                    link: '/daxpay/overview/系统介绍',
+                    link: '/daxpay/overview/数据表说明',
                 },
                 {
                     text: '中间件安装',
-                    link: '/daxpay/overview/系统介绍',
+                    link: '/daxpay/overview/中间件安装',
                 },
                 {
                     text: '系统部署',
@@ -58,7 +54,11 @@ export const DaxPay = {
             items: [
                 {
                     text: '常见问题',
-                    link: '/daxpay/overview/系统介绍',
+                    link: '/daxpay/overview/常见问题',
+                },
+                {
+                    text: '常量和状态表',
+                    link: '/daxpay/overview/常量和状态表',
                 },
             ]
         },
@@ -73,7 +73,7 @@ export const DaxPay = {
                 },
                 {
                     text: '签名规则',
-                    link: '/daxpay/gateway/支付接口',
+                    link: '/daxpay/gateway/签名规则',
                 },
                 {
                     text: '调用说明',
@@ -82,35 +82,49 @@ export const DaxPay = {
             ],
         },
         {
-            text: '接口清单',
+            text: '接口清单(支付)',
             items: [
                 {
-                    text: '支付接口',
-                    link: '/daxpay/gateway/支付接口',
+                    text: '统一支付接口',
+                    link: '/daxpay/gateway/interface/统一支付接口',
                 },
                 {
-                    text: '退款接口',
-                    link: '/daxpay/gateway/退款接口',
+                    text: '简单支付接口',
+                    link: '/daxpay/gateway/interface/简单支付接口',
                 },
                 {
-                    text: '支付关闭',
-                    link: '/daxpay/gateway/退款接口',
+                    text: '支付关闭接口',
+                    link: '/daxpay/gateway/interface/支付关闭接口',
                 },
                 {
-                    text: '支付同步',
-                    link: '/daxpay/gateway/退款接口',
+                    text: '统一退款接口',
+                    link: '/daxpay/gateway/interface/统一退款接口',
                 },
                 {
-                    text: '退款同步',
-                    link: '/daxpay/gateway/退款接口',
+                    text: '简单退款接口',
+                    link: '/daxpay/gateway/interface/简单退款接口',
                 },
+                {
+                    text: '支付同步接口',
+                    link: '/daxpay/gateway/interface/支付同步接口',
+                },
+                {
+                    text: '退款同步接口',
+                    link: '/daxpay/gateway/interface/退款同步接口',
+                },
+
+            ]
+        },
+        {
+            text: '接口清单(查询)',
+            items: [
                 {
                     text: '查询支付订单',
-                    link: '/daxpay/gateway/退款接口',
+                    link: '/daxpay/gateway/interface/查询支付订单',
                 },
                 {
                     text: '查询退款订单',
-                    link: '/daxpay/gateway/退款接口',
+                    link: '/daxpay/gateway/interface/查询退款订单',
                 },
             ]
         },
@@ -118,12 +132,12 @@ export const DaxPay = {
             text: '其他',
             items: [
                 {
-                    text: 'SDK使用',
-                    link: '/daxpay/gateway/支付接口',
+                    text: 'SDK使用说明',
+                    link: '/daxpay/gateway/SDK使用说明',
                 },
                 {
                     text: '返回状态码',
-                    link: '/daxpay/gateway/退款接口',
+                    link: '/daxpay/gateway/返回状态码',
                 }
             ]
         }

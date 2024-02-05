@@ -29,7 +29,7 @@ export default defineConfig({
         logo: '/logo.png',
         editLink: {
             text: '为此页提供修改建议',
-            pattern: 'https://gitee.com/bootx/bootx/'
+            pattern: 'https://gitee.com/bootx/bootx'
         },
         // 开启本地搜索
         search : {

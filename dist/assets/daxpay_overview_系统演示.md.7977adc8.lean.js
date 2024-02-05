@@ -1,0 +1,1 @@
+import{_ as e,o as a,c as t}from"./chunks/framework.6909765d.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"daxpay/overview/系统演示.md","filePath":"daxpay/overview/系统演示.md"}'),r={name:"daxpay/overview/系统演示.md"};function o(s,c,n,_,p,d){return a(),t("div")}const f=e(r,[["render",o]]);export{m as __pageData,f as default};
