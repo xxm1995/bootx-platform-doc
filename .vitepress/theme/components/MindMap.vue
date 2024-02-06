@@ -5,10 +5,10 @@
 </template>
 <script lang="js">
 // 引入样式
-import 'quick-svg/styles/mindmap.less';
+import '../styles/mindmap.less';
 // 引入组件
 import {Mindmap} from '../lib/quick-svg.es.js';
-import {onMounted, reactive} from "../../cache/deps/vue.js";
+import {onMounted, reactive} from "vue";
 export default {
   components: { Mindmap },
   props: ['data'],

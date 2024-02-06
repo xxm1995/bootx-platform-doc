@@ -5,6 +5,7 @@ specifiers:
   gray-matter: ^4.0.3
   less: ^4.2.0
   lodash: ^4.17.21
+  quick-svg: ^0.0.6
   sass: ^1.57.1
   vite: 4.5.2
   vitepress: 1.0.0-rc.41
@@ -12,6 +13,7 @@ specifiers:
   yorkie: ^2.0.0
 
 dependencies:
+  quick-svg: 0.0.6
   vue: 3.3.4
 
 devDependencies:
@@ -1575,6 +1577,12 @@ packages:
   /pseudomap/1.0.2:
     resolution: {integrity: sha1-8FKijacOYYkX7wqKw0wa5aaChrM=}
     dev: true
+
+  /quick-svg/0.0.6:
+    resolution: {integrity: sha512-SQz7OFqCoMeZUok5y42+457ZNjA0LQbckJd/nc4SuPoVMHYzGvsrEx75tlI5xrfaIu25QpdhzxVwLkmrLdO9UQ==}
+    dependencies:
+      vue: 3.3.4
+    dev: false
 
   /readdirp/3.6.0:
     resolution: {integrity: sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==}
