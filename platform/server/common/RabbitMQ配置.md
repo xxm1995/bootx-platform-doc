@@ -1,4 +1,7 @@
 # RabbitMQ配置
+::: warning
+功能实现不全, 请谨慎使用
+:::
 ## 说明
 - RabbitMQ的序列化方式进行了配置，使用的项目通用默认序列化方式（不保留数据类型，就是常规的那种json）
 - 提供 `RabbitTemplate` 对象的配置

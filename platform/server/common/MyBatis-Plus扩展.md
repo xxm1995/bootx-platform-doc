@@ -175,7 +175,7 @@ boolean existedByField(SFunction<T, ?> field, Object fieldValue,Serializable id)
 ```
 ### Chain
 
-同Mybatis-Plus的`ServiceImpl`
+同Mybatis-Plus的`ServiceImpl`使用方式一致
 
 ## MpUtil 工具类
 
@@ -199,9 +199,39 @@ boolean excludeBigField(TableFieldInfo tableFieldInfo)
 ```
 
 ## 扩展类型处理器
-`JacksonRawTypeHandler`  通过`Jackson`实现 JSON 字段类型处理器，相较于官方`JacksonTypeHandler`会记录对象属性类型, 通常用于被容器(List、Set、Map)包装的属性上，将泛型类型进行记录
+### JacksonRawTypeHandler
+> 相较于官方`JacksonTypeHandler`会记录对象属性类型, 通常用于储存不确定对象的属性上，例如: object对象, 泛型对象、存储的数据是字段声明类型的子类等，
+如果在使用知道明确类型的包装类是，如`List<T>`、`Set<T>`， 请使用 `JacksonTypeReferenceHandler` 相关类
+
 ```java
    /** 分配的原始数据 */
     @TableField(typeHandler = JacksonRawTypeHandler.class)
     private Object assignRaw;
 ```
+### JacksonTypeReferenceHandler
+
+> JSON字段类型转换抽象处理器类, 需要进行继承实现, 可以在不在JSON字符串中记录数据类型，就可以对一些特殊类型进行反序列化，例如: 集合类型`List<T>`, 泛型对象`ResResult<T>` 等。
+通过 getTypeReference 接口方法, 传入`TypeReference<T>`对象就可以进行反序列化，
+
+```java
+/**
+ * 支付订单可退款信息对应的MP字段处理器
+ * @author xxm
+ * @since 2024/1/3
+ */
+public class RefundableInfoTypeHandler extends JacksonTypeReferenceHandler<List<RefundableInfo>> {
+
+    /**
+     * 返回要反序列化的类型对象
+     */
+    @Override
+    public TypeReference<List<RefundableInfo>> getTypeReference() {
+        return new TypeReference<List<RefundableInfo>>() {};
+    }
+}
+```
+### LongListTypeHandler
+> `List<Long>`字段类型的转换器类
+
+### StringListTypeHandler
+> `List<String>`字段类型的转换器类

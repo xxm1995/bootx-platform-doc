@@ -89,6 +89,10 @@
   }
 }
 
+/* 强制覆盖标题不显示 # 标识 */
+.vp-doc .header-anchor:before {
+    content: none;!important;
+}
 /* 侧边栏文字超出隐藏 */
 .VPSidebarItem .VPLink p {
     text-overflow: ellipsis;
@@ -96,7 +100,6 @@
     white-space: nowrap;
     max-width: 200px;
 }
-
 
 /* 文档页面调整 */
 @media (min-width: 1440px) {
@@ -151,13 +154,6 @@
     margin: 16px 0;
     border: none !important;
 }
-.vp-doc hr::before {
-    content: '';
-    display: block;
-    height: 30px;
-    background: url(https://images.bddxg.top/blog/logo.webp) repeat-x;
-    background-size: contain;
-}
 /* 翻页按钮标题文字超出隐藏 */
 .VPDocFooter .pager .title {
     text-overflow: ellipsis;
@@ -166,9 +162,7 @@
 }
 /* 引用样式修改 */
 .vp-doc blockquote {
-    border-left: 4px solid #6fbef7;
-    border-radius: 4px;
-    background-color: var(--vp-badge-tip-bg);
+    border-left: 6px solid #0094ff;
 }
 /* 文本超链接样式修改 */
 .vp-doc a {

@@ -17,7 +17,7 @@ const ogTitle = 'Bootx'
 const ogUrl = '/'
 
 export default defineConfig({
-    title: 'Bootx 项目集',
+    title: 'Bootx 开源',
     description: '一个多功能的开源项目集',
     lang: 'zh-CN',
     outDir: './dist',
@@ -149,15 +149,15 @@ function createNav() {
             items: [
                 {
                     text: "快速指南",
-                    link: "/daxpay/overview/项目介绍",
+                    link: "/daxpay/guides/overview/项目介绍",
                 },
                 {
                     text: "支付对接",
-                    link: "/daxpay/gateway/接口清单",
+                    link: "/daxpay/gateway/overview/接口清单",
                 },
                 {
                     text: "使用说明",
-                    link: "/daxpay/config/支付配置",
+                    link: "/daxpay/admin/config/平台配置",
                 }
             ]
         },

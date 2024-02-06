@@ -3,20 +3,35 @@
     <Mindmap :config="the.config" :data="data" @onEvent="mindmapEvent"/>
   </div>
 </template>
-<script>
+<script lang="js">
 // 引入样式
 import 'quick-svg/styles/mindmap.less';
 // 引入组件
-import { Mindmap } from 'quick-svg';
-import {onMounted, reactive, ref} from "../../cache/deps/vue.js";
+import {Mindmap} from '../lib/quick-svg.es.js';
+import {onMounted, reactive} from "../../cache/deps/vue.js";
 export default {
   components: { Mindmap },
   props: ['data'],
   setup(props, context) {
     const the = reactive( {
       config: {
+        /* 线宽度 */
         line: 2,
-        lineColor: '#9299bb'
+        /* 线颜色 */
+        lineColor: '#9299bb',
+        /* 折线角度 */
+        bent: 30,
+        /* 文字外框形状 path,rect */
+        shape: "path",
+        /* 节点内部间距 */
+        padding: 8,
+        /* 节点外部上下间距 */
+        margin: 8,
+        /* 节点左右间隔大小 */
+        // interval: 15,
+        /* 节点默认宽度 */
+        // width: 100,
+
       },
       data: []
     })

@@ -12,22 +12,22 @@ export const PlatformServer  = {
                     link: '/platform/overview/guide/项目介绍',
                 },
                 {
+                    text: '功能列表',
+                    link: '/platform/overview/guide/功能列表',
+                },
+                {
                     text: '项目依赖',
                     link: '/platform/overview/guide/项目依赖',
                 },
                 {
-                    text: '内置功能',
-                    link: '/platform/overview/guide/内置功能',
+                    text: '系统演示',
+                    link: '/platform/overview/guide/系统演示',
                 },
             ]
         },
         {
             text: '系统模块',
             items: [
-                {
-                    text: 'Core核心功能包',
-                    link: '/platform/overview/guide/Core核心功能包',
-                },
                 {
                     text: '工具配置封装',
                     link: '/platform/overview/guide/工具配置封装',
@@ -43,41 +43,45 @@ export const PlatformServer  = {
             ]
         },
         {
-            text: '项目配置和运行',
+            text: '配置和运行',
             items: [
                 {
                     text: '项目启动',
                     link: '/platform/overview/config/项目启动',
                 },
                 {
-                    text: '项目部署',
-                    link: '/platform/overview/config/项目部署',
+                    text: '后端部署',
+                    link: '/platform/overview/config/后端部署',
                 },
                 {
-                    text: '功能裁剪',
-                    link: '/platform/overview/config/功能裁剪',
+                    text: '前端部署',
+                    link: '/platform/overview/config/前端部署',
                 },
                 {
                     text: '日志收集',
                     link: '/platform/overview/config/日志收集',
                 },
-                {
-                    text: '安装docker',
-                    link: '/platform/overview/config/安装docker',
-                },
-                {
-                    text: '中间件安装',
-                    link: '/platform/overview/config/中间件Docker-Compose',
-                },
             ]
         },
         {
-            text: 'FAQ',
+            text: '其他',
             items: [
                 {
                     text: '常见问题',
-                    link: '/platform/overview/faq/常见问题',
-                }
+                    link: '/platform/overview/other/常见问题',
+                },
+                {
+                    text: 'docker安装',
+                    link: '/platform/overview/other/docker安装',
+                },
+                {
+                    text: '中间件安装',
+                    link: '/platform/overview/other/中间件安装',
+                },
+                {
+                    text: '二次开发',
+                    link: '/platform/overview/other/二次开发',
+                },
             ]
         }
     ],
@@ -134,10 +138,6 @@ export const PlatformServer  = {
                     link: '/platform/server/common/Sequence序列生成器',
                 },
                 {
-                    text: 'MQTT消息队列封装',
-                    link: '/platform/server/common/MQTT消息队列封装',
-                },
-                {
                     text: 'Websocket封装',
                     link: '/platform/server/common/Websocket封装',
                 },
@@ -146,16 +146,12 @@ export const PlatformServer  = {
                     link: '/platform/server/common/Spring功能扩展',
                 },
                 {
-                    text: '超级查询器',
-                    link: '/platform/server/common/超级查询器',
+                    text: '查询构造器',
+                    link: '/platform/server/common/查询构造器',
                 },
                 {
                     text: 'Swagger模块',
                     link: '/platform/server/common/Swagger模块',
-                },
-                {
-                    text: 'XXL-Job定时任务',
-                    link: '/platform/server/common/XXL-Job定时任务',
                 },
             ]
         },
@@ -261,16 +257,16 @@ export const PlatformServer  = {
                     link: '/platform/server/service/iam/角色管理',
                 },
                 {
+                    text: '数据角色管理',
+                    link: '/platform/server/service/iam/数据角色管理',
+                },
+                {
                     text: '菜单管理',
                     link: '/platform/server/service/iam/菜单管理',
                 },
                 {
                     text: '访问权限管理',
                     link: '/platform/server/service/iam/访问权限管理',
-                },
-                {
-                    text: '数据权限管理',
-                    link: '/platform/server/service/iam/数据权限管理',
                 },
                 {
                     text: '权限码管理',
