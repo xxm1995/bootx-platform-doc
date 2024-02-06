@@ -3,14 +3,12 @@ import renderPermaLink from './render-perma-link'
 import MarkDownItCustomAnchor from './markdown-it-custom-anchor'
 // @ts-check
 // import urlEncode from "markdown-it-disable-url-encode"
-import {Platform} from "./doc/platform";
-
-import {BpmPlus} from "./doc/bpmplus";
+import {HeadConfig} from "vitepress/types/shared";
 
 import {DaxPay} from "./doc/daxpay";
-
 import {Safety} from "./doc/safety";
-import {HeadConfig} from "vitepress/types/shared";
+import {PlatformServer} from "./doc/platform-server";
+import {PlatformFront} from "./doc/platform-front";
 
 const ogDescription =
     '开源、精美、便捷、规范、交互自然。'
@@ -151,7 +149,7 @@ function createNav() {
             items: [
                 {
                     text: "快速指南",
-                    link: "/daxpay/overview/系统介绍",
+                    link: "/daxpay/overview/项目介绍",
                 },
                 {
                     text: "支付对接",
@@ -210,12 +208,12 @@ function createNav() {
  */
 function createSidebar() {
     return {
-        // 基础脚手架
-        ...Platform,
-        // 开源支付
+        // 基础脚手架后端
+        ...PlatformServer,
+        // 基础脚手架前端
+        ...PlatformFront,
+        // 开源支付网关
         ...DaxPay,
-        // 工作流
-        ...BpmPlus,
         // 安全相关
         ...Safety,
     }

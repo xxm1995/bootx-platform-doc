@@ -4,8 +4,11 @@ import Theme from 'vitepress/theme'
 import SvgImage from './components/SvgImage.vue'
 // @ts-ignore
 import LayoutBottom from './components/LayoutBottom.vue'
-import './styles/vars.css'
+// @ts-ignore
+import MindMap from './components/MindMap.vue'
 import './custom.css'
+import 'quick-svg/styles/mindmap.less';
+
 
 export default {
   ...Theme,
@@ -16,5 +19,6 @@ export default {
   },
   enhanceApp({ app }) {
     app.component('SvgImage', SvgImage)
+    app.component("MindMap", MindMap)
   }
 }

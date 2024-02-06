@@ -8,7 +8,7 @@ export const DaxPay = {
             items: [
                 {
                     text: '项目介绍',
-                    link: '/daxpay/overview/系统介绍',
+                    link: '/daxpay/overview/项目介绍',
                 },
                 {
                     text: '功能列表',
