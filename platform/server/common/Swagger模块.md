@@ -87,24 +87,20 @@ bootx:
     swagger:
       # 是否启用，生产环境推荐关闭
       enabled: true
-      author: xxm
+      author: bootx
       version: 1.x.x
       title: bootx开发平台单体版
       description: bootx-platform开发平台单体版
       # 多模块扫包
       base-packages:
-        "[基础API]": cn.bootx.baseapi
-        "[身份识别和管理]": cn.bootx.iam
-        "[消息服务]": cn.bootx.notice
-        "[商品服务]": cn.bootx.goods
-        "[支付服务]": cn.bootx.payment
-        "[销售服务]": cn.bootx.sales
-        "[订单服务]": cn.bootx.order
-        "[演示模块]": cn.bootx.demo
+        "[基础API]": cn.bootx.platform.baseapi
+        "[IAM认证管理]": cn.bootx.platform.iam
+        "[消息服务]": cn.bootx.platform.notice
+        "[演示模块]": cn.bootx.platform.demo
         # 支持一个模块扫描多个包
         "[第三方对接]":
-          - cn.bootx.starter.dingtalk
-          - cn.bootx.starter.wecom
-          - cn.bootx.starter.wechat
-        "[自定义starter组件]": cn.bootx.starter
+          - cn.bootx.platform.starter.dingtalk
+          - cn.bootx.platform.starter.wecom
+          - cn.bootx.platform.starter.wechat
+        "[自定义starter组件]": cn.bootx.platform.starter
 ```
