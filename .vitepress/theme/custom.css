@@ -91,7 +91,7 @@
 
 /* 强制覆盖标题不显示 # 标识 */
 .vp-doc .header-anchor:before {
-    content: none;!important;
+    content: none;
 }
 /* 侧边栏文字超出隐藏 */
 .VPSidebarItem .VPLink p {
