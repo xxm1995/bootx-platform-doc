@@ -32,8 +32,8 @@ export const DaxPay = {
                     link: '/daxpay/guides/develop/项目启动',
                 },
                 {
-                    text: '配置文件说明',
-                    link: '/daxpay/guides/develop/配置文件说明',
+                    text: '配置说明',
+                    link: '/daxpay/guides/develop/配置说明',
                 },
                 {
                     text: '数据库说明',

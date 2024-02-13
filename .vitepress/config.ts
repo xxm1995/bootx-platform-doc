@@ -188,11 +188,7 @@ function createNav() {
             items: [
                 {
                     text: 'platform',
-                    link: 'http://v3.platform.bootx.cn/',
-                },
-                {
-                    text: '可视化大屏',
-                    link: 'http://visualization.platform.bootx.cn/',
+                    link: 'http://platform.demo.bootx.cn/',
                 },
                 {
                     text: 'daxpay',
