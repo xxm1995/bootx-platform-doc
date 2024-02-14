@@ -1,8 +1,8 @@
 ---
 layout: home
 
-title: Bootx 说明文档
-titleTemplate: 低代码数据可视化开发平台
+title: Bootx 开源文档站
+titleTemplate: Bootx 开源文档站
 
 hero:
   name: BootX
@@ -14,12 +14,14 @@ hero:
     width: 250
   actions:
     - theme: brand
-      text: 快速开始
-      link: /platform/overview/guide/项目介绍
-    - theme: alt
       text: 项目合集
       link: https://www.gitee.com/bootx
-
+    - theme: alt
+      text: Platform脚手架
+      link: /platform/overview/guide/项目介绍
+    - theme: alt
+      text: DaxPay支付平台
+      link: /daxpay/guides/overview/项目介绍
 features:
   - icon: 💡
     title: 主流技术栈

@@ -75,6 +75,14 @@ export const DaxPay = {
                     text: '调用说明',
                     link: '/daxpay/gateway/overview/调用说明',
                 },
+                {
+                    text: 'SDK使用',
+                    link: '/daxpay/gateway/overview/SDK使用说明',
+                },
+                {
+                    text: '状态码',
+                    link: '/daxpay/gateway/overview/返回状态码',
+                }
             ],
         },
         {
@@ -125,18 +133,18 @@ export const DaxPay = {
             ]
         },
         {
-            text: '其他',
+            text: '接口清单(支撑性)',
             items: [
                 {
-                    text: 'SDK使用说明',
-                    link: '/daxpay/gateway/other/SDK使用说明',
+                    text: '获取微信OAuth2授权链接',
+                    link: '/daxpay/gateway/assist/获取微信OAuth2授权链接',
                 },
                 {
-                    text: '返回状态码',
-                    link: '/daxpay/gateway/other/返回状态码',
-                }
+                    text: '获取微信AccessToken',
+                    link: '/daxpay/gateway/assist/获取微信AccessToken',
+                },
             ]
-        }
+        },
     ],
     '/daxpay/admin/': [
         {
@@ -167,13 +175,39 @@ export const DaxPay = {
         {
             text: '订单管理',
             items: [
-
+                {
+                    text: '支付订单',
+                    link: '/daxpay/admin/order/支付订单',
+                },
+                {
+                    text: '退款订单',
+                    link: '/daxpay/admin/order/退款订单',
+                },
+                {
+                    text: '对账订单',
+                    link: '/daxpay/admin/order/对账订单',
+                },
             ]
         },
         {
             text: '数据记录',
             items: [
-
+                {
+                    text: '回调记录',
+                    link: '/daxpay/admin/record/回调记录',
+                },
+                {
+                    text: '关闭记录',
+                    link: '/daxpay/admin/record/支付订单',
+                },
+                {
+                    text: '修复记录',
+                    link: '/daxpay/admin/record/回调记录',
+                },
+                {
+                    text: '同步记录',
+                    link: '/daxpay/admin/record/回调记录',
+                },
             ]
         },
     ]
