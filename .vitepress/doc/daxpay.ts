@@ -198,15 +198,15 @@ export const DaxPay = {
                 },
                 {
                     text: '关闭记录',
-                    link: '/daxpay/admin/record/支付订单',
+                    link: '/daxpay/admin/record/关闭记录',
                 },
                 {
                     text: '修复记录',
-                    link: '/daxpay/admin/record/回调记录',
+                    link: '/daxpay/admin/record/修复记录',
                 },
                 {
                     text: '同步记录',
-                    link: '/daxpay/admin/record/回调记录',
+                    link: '/daxpay/admin/record/同步记录',
                 },
             ]
         },
