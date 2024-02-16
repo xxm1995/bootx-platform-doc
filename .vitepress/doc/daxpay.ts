@@ -19,6 +19,10 @@ export const DaxPay = {
                     link: '/daxpay/guides/overview/系统架构',
                 },
                 {
+                    text: '名词解释',
+                    link: '/daxpay/guides/overview/名词解释',
+                },
+                {
                     text: '系统演示',
                     link: '/daxpay/guides/overview/系统演示',
                 },
