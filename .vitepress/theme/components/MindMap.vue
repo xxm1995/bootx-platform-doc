@@ -63,7 +63,6 @@ export default {
      * 脑图事件
      */
     const mindmapEvent = (resp) => {
-      // console.log(resp.cmd, resp.node)
       switch (resp.cmd) {
         case 'init': //组件初始化
           // 缓存脑图回调绑定方法
