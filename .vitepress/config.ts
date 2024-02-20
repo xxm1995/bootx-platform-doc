@@ -2,7 +2,6 @@ import { defineConfig } from 'vitepress'
 import renderPermaLink from './render-perma-link'
 import MarkDownItCustomAnchor from './markdown-it-custom-anchor'
 // @ts-check
-// import urlEncode from "markdown-it-disable-url-encode"
 import {HeadConfig} from "vitepress/types/shared";
 
 import {DaxPay} from "./doc/daxpay";
