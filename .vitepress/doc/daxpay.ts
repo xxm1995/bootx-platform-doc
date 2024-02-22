@@ -94,6 +94,19 @@ export const DaxPay = {
             ],
         },
         {
+            text: '消息通知',
+            items: [
+                {
+                    text: '支付订单通知',
+                    link: '/daxpay/gateway/notice/支付订单通知',
+                },
+                {
+                    text: '退款订单通知',
+                    link: '/daxpay/gateway/notice/退款订单通知',
+                },
+            ]
+        },
+        {
             text: '接口清单(支付)',
             items: [
                 {
@@ -162,7 +175,7 @@ export const DaxPay = {
                     text: '平台配置',
                     link: '/daxpay/admin/config/平台配置',
                 },
-                  {
+                {
                     text: '支付通道',
                     link: '/daxpay/admin/config/支付通道',
                 },
