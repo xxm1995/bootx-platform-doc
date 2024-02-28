@@ -34,38 +34,50 @@ bootx.common.sequence:
 2. 使用 
 ```java
 public class TestController {
+    // 注入的是默认的序列生成器
     private final Sequence sequence;
 
-    @Operation(summary = "发号器")
+    @Operation(summary = "序列生成器")
     @GetMapping("/sequence")
     public ResResult<Void> sequence(){
-        // 通过传入业务键获取long 类型的号码,
-        long l = sequence.next("cs");
-        // 获取string
-        String s = sequence.nextValue("cs");
+        long l = sequence.next();
         return Res.ok();
     }
 }
 ```
 
 ## 自定义序列生成器
-> 在不同的业务场合中，区间起始位置、步长可能会不尽相同，所以支持开发者根据不同的需要，创建出自定义序列生成器，提供`SequenceUtil`工具类用来快速创建队列对象
+> 在不同的业务场合中，区间起始位置、步长、序列名称可能会不尽相同，所以支持开发者根据不同的需要，创建出自定义序列生成器，
+> 提供`SequenceUtil`工具类用来快速创建队列对象
+
+```java
+/**
+ * 创建一个自定义的序列号生成器
+ * @param step 步长
+ * @param rangeStep 区间步长
+ * @param rangeStart 区间起始值
+ * @param name 序列生成器的Key
+ * @return 序列生成器
+ */
+public Sequence create(int step, int rangeStep, int rangeStart, String name) {
+}
+
+```
 
 ### 注册到`Spring`容器中
 
 ```java
 @Bean
 public Sequence mySeq(){
-    // 创建了一个步长为1, 区间步长为 100, 区间起始位置为0的队列
-    return SequenceUtil.create(1,100,0);
+    // 创建了一个步长为1, 区间步长为 100, 区间起始位置为0的 "TestSeq" 队列
+    return SequenceUtil.create(1,100,0,"TestSeq");
 }
 ```
 ### 创建对象直接使用
 ```java
 public void test(){
     Sequence sequence = SequenceUtil.create(1, 100, 0);
-    // TestSeq 是队列名
-    sequence.next("TestSeq");
+    sequence.next();
 }
 ```
 
