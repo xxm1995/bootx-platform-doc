@@ -54,7 +54,6 @@
 {
   "clientIp": "127.0.0.1",
   "sign": "",
-  "version": "1.0",
   "reqTime": "123457711",
   "url": "https://daxpay.demo.bootx.cn/h5/#/result/success",
   "state": "1705441100211"

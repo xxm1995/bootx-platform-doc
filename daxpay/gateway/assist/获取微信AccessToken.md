@@ -52,7 +52,6 @@
 {
   "clientIp": "127.0.0.1",
   "sign": "",
-  "version": "1.0",
   "reqTime": "123457711",
   "code": "892e382a7093b81e6a"
 }
