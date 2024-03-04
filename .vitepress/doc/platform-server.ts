@@ -71,8 +71,8 @@ export const PlatformServer  = {
                     link: '/platform/overview/other/常见问题',
                 },
                 {
-                    text: 'docker安装',
-                    link: '/platform/overview/other/docker安装',
+                    text: 'Docker安装',
+                    link: '/platform/overview/other/Docker安装',
                 },
                 {
                     text: '中间件安装',
