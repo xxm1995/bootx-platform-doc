@@ -231,6 +231,29 @@ export const DaxPay = {
                 },
             ]
         },
+
+        {
+            text: '支付通道',
+            items: [
+                {
+                    text: '钱包管理',
+                    link: '/daxpay/admin/channel/钱包管理',
+                },
+                {
+                    text: '储值卡管理',
+                    link: '/daxpay/admin/channel/储值卡管理',
+                }
+            ]
+        },
+        {
+            text: '数据记录',
+            items: [
+                {
+                    text: '同步记录',
+                    link: '/daxpay/admin/task/消息通知',
+                }
+            ]
+        },
     ]
 
 }
