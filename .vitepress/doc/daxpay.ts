@@ -231,20 +231,6 @@ export const DaxPay = {
                 },
             ]
         },
-
-        {
-            text: '支付通道',
-            items: [
-                {
-                    text: '钱包管理',
-                    link: '/daxpay/admin/channel/钱包管理',
-                },
-                {
-                    text: '储值卡管理',
-                    link: '/daxpay/admin/channel/储值卡管理',
-                }
-            ]
-        },
         {
             text: '数据记录',
             items: [
@@ -254,6 +240,61 @@ export const DaxPay = {
                 }
             ]
         },
+    ],
+    '/daxpay/channel/': [
+        {
+            text: '支付宝',
+            items: [
+                {
+                    text: '介绍',
+                    link: '/daxpay/channel/alipay/支付宝',
+                }
+            ]
+        },
+        {
+            text: '微信支付',
+            items: [
+                {
+                    text: '介绍',
+                    link: '/daxpay/channel/wechat/微信支付',
+                }
+            ]
+        },
+        {
+            text: '云闪付',
+            items: [
+                {
+                    text: '介绍',
+                    link: '/daxpay/channel/union/云闪付',
+                }
+            ]
+        },
+        {
+            text: '钱包',
+            items: [
+                {
+                    text: '介绍',
+                    link: '/daxpay/channel/wallet/钱包管理',
+                }
+            ]
+        },
+        {
+            text: '现金支付',
+            items: [
+                {
+                    text: '介绍',
+                    link: '/daxpay/channel/cash/现金支付',
+                }
+            ]
+        },
+        {
+            text: '储值卡',
+            items: [
+                {
+                    text: '介绍',
+                    link: '/daxpay/channel/voucher/储值卡管理',
+                }
+            ]
+        },
     ]
-
 }

@@ -157,7 +157,11 @@ function createNav() {
                 {
                     text: "操作手册",
                     link: "/daxpay/admin/config/平台配置",
-                }
+                },
+                {
+                    text: '支付通道',
+                    link: "/daxpay/channel/alipay/支付宝",
+                },
             ]
         },
         {
