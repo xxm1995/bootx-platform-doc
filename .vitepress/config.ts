@@ -4,7 +4,6 @@ import MarkDownItCustomAnchor from './markdown-it-custom-anchor'
 // @ts-check
 import {HeadConfig} from "vitepress/types/shared";
 
-import {DaxPay} from "./doc/daxpay";
 import {Safety} from "./doc/safety";
 import {PlatformServer} from "./doc/platform-server";
 import {PlatformFront} from "./doc/platform-front";
@@ -144,45 +143,11 @@ function createNav() {
             ]
         },
         {
-            text: "支付网关(DaxPay)",
-            items: [
-                {
-                    text: "快速指南",
-                    link: "/daxpay/guides/overview/项目介绍",
-                },
-                {
-                    text: "支付对接",
-                    link: "/daxpay/gateway/overview/接口清单",
-                },
-                {
-                    text: "操作手册",
-                    link: "/daxpay/admin/config/平台配置",
-                },
-                {
-                    text: '支付通道',
-                    link: "/daxpay/channel/alipay/支付宝",
-                },
-            ]
-        },
-        {
             text: '源码',
             items: [
                 {
                     text: 'Bootx-Platform',
                     link: 'https://gitee.com/bootx/bootx-platform',
-                },
-                {
-                    text: '支付网关(DaxPay)',
-                    link: 'https://gitee.com/bootx/dax-pay',
-                },
-            ],
-        },
-        {
-            text: '交流群',
-            items: [
-                {
-                    text: 'QQ群：939414255',
-                    link: 'https://qm.qq.com/cgi-bin/qm/qr?k=hPIJw0BLRMONMZCYLUtB5wWHqumhOpCw&authKey=m3YVb3vcRR0MtBlXLEMfTAhxBlOlLtobsF8Otipp6N0DqdUn55q0G/e7HhnvtsY2&noverify=0',
                 },
             ],
         },
@@ -193,10 +158,6 @@ function createNav() {
                     text: 'platform',
                     link: 'http://platform.demo.bootx.cn/',
                 },
-                {
-                    text: 'daxpay',
-                    link: 'http://daxpay.demo.bootx.cn/',
-                }
             ],
         },
     ];
@@ -211,8 +172,6 @@ function createSidebar() {
         ...PlatformServer,
         // 基础脚手架前端
         ...PlatformFront,
-        // 开源支付网关
-        ...DaxPay,
         // 安全相关
         ...Safety,
     }
