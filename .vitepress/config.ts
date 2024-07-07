@@ -136,10 +136,6 @@ function createNav() {
                     text: "移动端",
                     link: "/platform/front/mobile/移动端介绍",
                 },
-                {
-                    text: "可视化大屏",
-                    link: "/platform/front/bigscreen/可视化介绍",
-                }
             ]
         },
         {

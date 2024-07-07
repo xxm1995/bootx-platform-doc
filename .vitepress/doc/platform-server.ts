@@ -212,24 +212,8 @@ export const PlatformServer  = {
                     link: '/platform/server/service/baseapi/验证码管理',
                 },
                 {
-                    text: '动态表单管理',
-                    link: '/platform/server/service/baseapi/动态表单',
-                },
-                {
-                    text: '动态数据源',
-                    link: '/platform/server/service/baseapi/动态数据源',
-                },
-                {
-                    text: '键值对存储',
-                    link: '/platform/server/service/baseapi/键值对存储',
-                },
-                {
                     text: '敏感词管理',
                     link: '/platform/server/service/baseapi/敏感词管理',
-                },
-                {
-                    text: '通用导入',
-                    link: '/platform/server/service/baseapi/通用导入',
                 },
             ]
         },
@@ -257,16 +241,16 @@ export const PlatformServer  = {
                     link: '/platform/server/service/iam/角色管理',
                 },
                 {
-                    text: '数据角色管理',
-                    link: '/platform/server/service/iam/数据角色管理',
-                },
-                {
                     text: '菜单管理',
                     link: '/platform/server/service/iam/菜单管理',
                 },
                 {
-                    text: '访问权限管理',
-                    link: '/platform/server/service/iam/访问权限管理',
+                    text: '请求权限管理',
+                    link: '/platform/server/service/iam/请求权限管理',
+                },
+                {
+                    text: '访问鉴权',
+                    link: '/platform/server/service/iam/访问鉴权',
                 },
                 {
                     text: '权限码管理',
@@ -303,12 +287,6 @@ export const PlatformServer  = {
                 },
             ]
         },
-        {
-            text: '可视化大屏',
-            items: [
-
-            ]
-        },
     ],
     '/platform/server/other/':[
         {
@@ -325,10 +303,6 @@ export const PlatformServer  = {
                 {
                     text: '代码生成器',
                     link: '/platform/server/other/代码生成器',
-                },
-                {
-                    text: '微信公众号管理',
-                    link: '/platform/server/other/微信公众号管理.md',
                 },
             ]
         }
